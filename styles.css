@@ -395,3 +395,49 @@ textarea.form-input {
     resize: vertical;
     min-height: 100px;
 }
+
+/* Footer Styles */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+    margin-top: 4rem;
+    background-color: var(--background);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-container p {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--muted-foreground);
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--foreground);
+}
+
+/* Make it stack neatly on mobile phones */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
