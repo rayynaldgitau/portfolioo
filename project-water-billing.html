@@ -13,10 +13,26 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Responsive Grid specifically for the Case Studies */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        @media (max-width: 900px) {
+            .case-study-grid {
+                grid-template-columns: 1fr; /* Stacks columns on mobile */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-ambient"></div>
 
+    <!-- Navigation with Mobile Menu -->
     <nav class="glass-nav">
         <div class="nav-container">
             <a href="index.html" class="logo-link">
@@ -24,7 +40,12 @@
                     <img src="profile.jpg" alt="Raynald Gitau" class="nav-avatar" onerror="this.src='https://via.placeholder.com/40/1e293b/6ee7b7?text=RG'">
                 </div>
             </a>
-            <ul class="nav-links">
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
             </ul>
         </div>
@@ -32,7 +53,8 @@
 
     <main class="section-container" style="padding-top: 140px;">
         
-        <div class="hero-grid fade-in" style="margin-bottom: 4rem; gap: 3rem; align-items: start;">
+        <!-- Case Study Header Matrix -->
+        <div class="hero-grid fade-in" style="margin-bottom: 4rem; align-items: start;">
             <div>
                 <div class="status-badge" style="color: var(--accent-sage); border-color: rgba(110, 231, 183, 0.2);">
                     <i class="fas fa-project-diagram"></i> Architecture Study
@@ -41,6 +63,7 @@
                 <p class="hero-desc" style="max-width: 100%;">An end-to-end utility system mapping engine designed to manage high-volume consumer billing accounts, automated cycles, and systematic routing rulesets.</p>
             </div>
             
+            <!-- Metadata Manifest Card -->
             <div class="code-card" style="padding: 1.5rem; background: rgba(30, 41, 59, 0.4);">
                 <table style="width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: 0.9rem;">
                     <tr style="border-bottom: 1px solid var(--border-light);">
@@ -59,8 +82,10 @@
             </div>
         </div>
 
-        <div class="skills-showcase fade-in" style="grid-template-columns: 1.8fr 1.2fr; gap: 2.5rem; margin-bottom: 4rem;">
+        <!-- Multi-Column Exploration Layout -->
+        <div class="case-study-grid fade-in">
             
+            <!-- Left Side: Narrative Track -->
             <div style="display: flex; flex-direction: column; gap: 2.5rem;">
                 
                 <div class="code-card" style="padding: 2rem;">
@@ -92,6 +117,7 @@
                 </div>
             </div>
 
+            <!-- Right Side: Interactive Architecture Console Visualizer -->
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <div class="code-window" style="height: 100%;">
                     <div class="code-window-header">
@@ -102,21 +128,19 @@
                         </div>
                         <span class="file-name">data-flow-blueprint.map</span>
                     </div>
-                    <div class="code-window-body" style="padding: 1.5rem; flex-direction: column; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+                    <div class="code-window-body" style="padding: 1.5rem; flex-direction: column; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; overflow-x: auto;">
                         <div style="color: var(--accent-blue); margin-bottom: 0.5rem;">// Pipeline State Tracing Map</div>
-                        <div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
-                            [Consumer Usage Log]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
-                            [Automated Billing Cycle]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─── Balance == 0 <i class="fas fa-arrow-right" style="color: var(--accent-sage);"></i> [Active State]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─── Balance &gt; 0  <i class="fas fa-arrow-right" style="color: #ef4444;"></i> [Overdue Router]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Service Suspension]
-                        </div>
-                        <p style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.85rem;">Normalized database models ensure system states map immediately without record conflicts across tables.</p>
+                        <div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light); white-space: pre;">[Consumer Usage Log]
+        │
+        ▼
+[Automated Billing Cycle]
+        │
+        ├─── Balance == 0 <i class="fas fa-arrow-right" style="color: var(--accent-sage);"></i> [Active State]
+        └─── Balance &gt; 0  <i class="fas fa-arrow-right" style="color: #ef4444;"></i> [Overdue Router]
+                              │
+                              ▼
+                      [Service Suspension]</div>
+                        <p style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.85rem; white-space: normal;">Normalized database models ensure system states map immediately without record conflicts across tables.</p>
                     </div>
                 </div>
             </div>

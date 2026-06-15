@@ -24,7 +24,12 @@
             <a href="#about" class="logo-link">
                 <h1 style="font-size: 1.2rem; color: var(--text-primary);">R<span style="color: var(--accent-sage);">.</span>Gitau</h1>
             </a>
-            <ul class="nav-links">
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#skills"><span class="nav-num">01.</span> Stack</a></li>
                 <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
                 <li><a href="#education"><span class="nav-num">03.</span> Education</a></li>
@@ -59,7 +64,7 @@
                         <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/raynaldgitau" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="mailto:raynaldgitau@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads"><i class="fab fa-threads"></i></a>
+                        <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads"><i class="fab fa-threads"></i></a>
                     </div>
                 </div>
 
@@ -149,8 +154,8 @@
             <div class="section-tag fade-in">// 03. ACADEMICS</div>
             <h2 class="section-title fade-in">Education & Growth</h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;" class="fade-in">
-                <div class="code-card" style="padding: 2rem;">
+            <div class="responsive-grid fade-in">
+                <div class="code-card" style="padding: 2.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                         <h3 style="color: var(--text-primary); font-size: 1.2rem;">USIU-Africa</h3>
                         <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">2025 &mdash; PRESENT</span>
@@ -161,7 +166,7 @@
                     </p>
                 </div>
 
-                <div class="code-card" style="padding: 2rem;">
+                <div class="code-card" style="padding: 2.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                         <h3 style="color: var(--text-primary); font-size: 1.2rem;">Institute of Software Technologies</h3>
                         <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">NOV 2024</span>
@@ -172,7 +177,7 @@
                     </p>
                 </div>
 
-                <div class="code-card" style="padding: 2rem;">
+                <div class="code-card" style="padding: 2.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                         <h3 style="color: var(--text-primary); font-size: 1.2rem;">Emobilis</h3>
                         <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">SEP 2023</span>
@@ -190,7 +195,7 @@
             <h2 class="section-title fade-in">Featured Projects</h2>
             <p class="section-subtitle fade-in">Detailed breakdowns of software architectures and full-stack development implementations.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;" class="fade-in">
+            <div class="responsive-grid fade-in">
                 <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
                     <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Water Billing Platform</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">End-to-end utility billing system architecture managing automated cycles and account state routing.</p>
@@ -215,7 +220,7 @@
             <div class="section-tag fade-in">// 05. COMMUNICATION</div>
             <h2 class="section-title fade-in">Get In Touch</h2>
             
-            <div class="hero-grid fade-in" style="gap: 2rem; align-items: start;">
+            <div class="hero-grid contact-grid fade-in" style="gap: 2rem; align-items: start;">
                 <div class="code-card" style="padding: 2.5rem;">
                     <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Contact Details</h3>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
@@ -242,22 +247,8 @@
         <div class="footer-container">
             <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
             <div class="social-links footer-socials">
-                <!-- GitHub -->
-                <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <!-- LinkedIn (Replace with your actual URL) -->
-                <a href="https://linkedin.com/in/your-profile-here" target="_blank" aria-label="LinkedIn" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <!-- Threads (Replace with your actual URL) -->
-                <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads">
-                    <i class="fab fa-threads"></i>
-                </a>
-                <!-- Email (Replace with your actual email) -->
-                <a href="mailto:your.email@example.com" aria-label="Email" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="https://github.com/rayynaldgitau" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/raynaldgitau" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>

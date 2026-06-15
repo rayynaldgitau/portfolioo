@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Mobile Menu Toggle Logic ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu automatically on mobile when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
+
     // --- Gentle Fade-Ins on Scroll ---
     const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -160,7 +189,6 @@ app.listen(3000, () => console.log('Server running on port 3000'));`
             });
         });
 
-        // Initialize first tab selection
         updateSkillUI('react');
     }
 });
