@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Inventory System | Case Study</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-ambient"></div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="nav-pixel-frame">
+                    <img src="profile.jpg" alt="Raynald Gitau" class="nav-avatar" onerror="this.src='https://via.placeholder.com/40/1e293b/6ee7b7?text=RG'">
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section-container" style="padding-top: 140px;">
+        
+        <div class="hero-grid fade-in" style="margin-bottom: 4rem; gap: 3rem; align-items: start;">
+            <div>
+                <div class="status-badge" style="color: #a78bfa; border-color: rgba(167, 139, 250, 0.2);">
+                    <i class="fas fa-sitemap"></i> Systems Analysis Specification
+                </div>
+                <h1 class="hero-title" style="font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 1rem;">Pharmacy Inventory S&D</h1>
+                <p class="hero-desc" style="max-width: 100%;">A rigorous Systems Analysis and Design framework focused on medical supply chains, inventory replenishment blueprints, and fault-tolerant stock data loops.</p>
+            </div>
+            
+            <div class="code-card" style="padding: 1.5rem; background: rgba(30, 41, 59, 0.4);">
+                <table style="width: 100%; border-collapse: collapse; font-family: var(--sans-serif); font-size: 0.9rem;">
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">ROLE</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--text-primary);">Systems Analyst</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">CONTEXT</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--text-primary);">S&D Blueprint Block</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">MODELING</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--accent-sage);">UML • Use Case • Activity</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="skills-showcase fade-in" style="grid-template-columns: 1.8fr 1.2fr; gap: 2.5rem; margin-bottom: 4rem;">
+            
+            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                
+                <div class="code-card" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem;">
+                        <i class="fas fa-notes-medical" style="color: #ef4444;"></i> The Supply Chain Threat
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                        In medical dispatch nodes, stockout errors cause severe treatment breaks. Designing system parameters that safely analyze real-time drug depletion scales requires modeling multi-tier workflows across pharmacists, suppliers, and managers with zero structural overlaps.
+                    </p>
+                </div>
+
+                <div class="code-card" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem;">
+                        <i class="fas fa-project-diagram" style="color: var(--accent-sage);"></i> Component Specifications
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">
+                        This analysis established clear functional logic thresholds before deployment, creating robust boundaries:
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; padding-left: 0;">
+                        <li style="display: flex; gap: 0.75rem; align-items: start; font-size: 0.9rem; color: var(--text-secondary);">
+                            <i class="fas fa-angle-right" style="color: var(--accent-blue); margin-top: 0.25rem; font-weight: bold;"></i>
+                            <span><strong>Actor Matrix Boundaries:</strong> Strictly models user validation tiers via Use Case mappings, protecting secure data access across roles.</span>
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; align-items: start; font-size: 0.9rem; color: var(--text-secondary);">
+                            <i class="fas fa-angle-right" style="color: var(--accent-blue); margin-top: 0.25rem; font-weight: bold;"></i>
+                            <span><strong>Activity Automation Streams:</strong> Traces stock transitions from ingestion checks directly to dispense tracking pipelines, minimizing calculation faults.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="code-window" style="height: 100%;">
+                    <div class="code-window-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <span class="file-name">actor-usecase.matrix</span>
+                    </div>
+                    <div class="code-window-body" style="padding: 1.5rem; flex-direction: column; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+                        <div style="color: #a78bfa; margin-bottom: 0.5rem;">// System Boundary Map</div>
+                        <div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                            [Pharmacist Component]<br>
+                            &nbsp;&nbsp;└─── (Dispense Tracking)<br><br>
+                            [Inventory Node Manager]<br>
+                            &nbsp;&nbsp;├─── (Verify Stock Level)<br>
+                            &nbsp;&nbsp;└─── (Trigger Reorder Alert)<br><br>
+                            [Automated System Trigger]<br>
+                            &nbsp;&nbsp;└─── &lt;&lt;include&gt;&gt; Procurement Logs
+                        </div>
+                        <p style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.85rem;">Precise activity pathways guarantee developer alignment, ensuring data-ready deployment across full-stack applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade-in" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 3rem;">
+            <a href="index.html#projects" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Return to Main Deck</a>
+            <a href="https://github.com/rayynaldgitau" target="_blank" class="btn primary-btn" style="margin-left: 1rem;"><i class="fab fa-github"></i> Explore Specifications Docs</a>
+        </div>
+    </main>
+
+    <footer class="footer" style="margin-top: 5rem;">
+        <div class="footer-container">
+            <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
+            <div class="social-links footer-socials">
+                <!-- GitHub -->
+                <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- LinkedIn (Replace with your actual URL) -->
+                <a href="https://linkedin.com/in/your-profile-here" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <!-- Threads (Replace with your actual URL) -->
+                <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads">
+                    <i class="fab fa-threads"></i>
+                </a>
+                <!-- Email (Replace with your actual email) -->
+                <a href="mailto:your.email@example.com" aria-label="Email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

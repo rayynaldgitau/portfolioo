@@ -1,322 +1,267 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raynald</title>
+    <title>Raynald Gitau | Junior Software Developer</title>
+    
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="border-b">
+    <div class="bg-ambient"></div>
+
+    <nav class="glass-nav">
         <div class="nav-container">
-            <h1 class="logo">Raynald Gitau</h1>
+            <a href="#about" class="logo-link">
+                <h1 style="font-size: 1.2rem; color: var(--text-primary);">R<span style="color: var(--accent-sage);">.</span>Gitau</h1>
+            </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Stack</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">CV</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://github.com/rayynaldgitau" target="_blank" class="btn-outline"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="#skills"><span class="nav-num">01.</span> Stack</a></li>
+                <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
+                <li><a href="#education"><span class="nav-num">03.</span> Education</a></li>
+                <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
+                <li><a href="#contact"><span class="nav-num">05.</span> Contact</a></li>
+                <li><a href="hire-me.html" class="btn-outline" style="margin-left: 1rem; color: var(--accent-sage) !important; border-color: var(--accent-sage);">Hire Me</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="about" class="hero-section full-screen">
-        <div class="hero-content fade-in">
-            
-            <div class="profile-img-container">
-                <img src="assets/profilePic.jpeg" alt="Raynald Gitau" class="profile-img">
-            </div>
-
-            <div class="badge">Computer Science & Software Engineering</div>
-            
-            <h1 class="hero-title">Hi, I'm Raynald Gitau.</h1>
-            <p class="hero-desc">I am a software engineering student at USIU-Africa based in Nairobi. I specialize in full-stack development, database architecture, and translating complex problems into elegant, scalable software solutions.</p>
-            
-            <div class="hero-actions">
-                <a href="#projects" class="btn primary-btn">View Projects</a>
-                <a href="https://github.com/rayynaldgitau" target="_blank" class="btn secondary-btn"><i class="fab fa-github"></i> @rayynaldgitau</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="skills" class="section-container">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Technical Proficiency</h2>
-            <p class="section-subtitle">Core languages, frameworks, and architectural design capabilities.</p>
-        </div>
-
-        <div class="skills-grid fade-in">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fab fa-python icon-muted"></i>
-                    <h3>Python</h3>
-                </div>
-                <p class="card-text">Backend services, API integrations, and automation scripting.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 80%;"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fab fa-java icon-muted"></i>
-                    <h3>Java</h3>
-                </div>
-                <p class="card-text">Object-oriented programming and enterprise-level application logic.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 85%;"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fab fa-react icon-muted"></i>
-                    <h3>React & Node.js</h3>
-                </div>
-                <p class="card-text">Building dynamic, multi-tenant web applications and RESTful APIs.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 70%;"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-database icon-muted"></i>
-                    <h3>MySQL</h3>
-                </div>
-                <p class="card-text">Relational database schemas, queries, and state management.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 85%;"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-sitemap icon-muted"></i>
-                    <h3>System Design (UML)</h3>
-                </div>
-                <p class="card-text">Requirements modeling, state transitions, and software architecture.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 90%;"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-microchip icon-muted"></i>
-                    <h3>AI & API Integrations</h3>
-                </div>
-                <p class="card-text">Implementation of Deepseek, Groq, and Ollama APIs in development.</p>
-                <div class="proficiency-bar">
-                    <div class="proficiency-fill" style="width: 75%;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-container">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Engineering Portfolio</h2>
-            <p class="section-subtitle">Recent academic and personal software engineering developments.</p>
-        </div>
-        
-        <div class="tabs fade-in">
-            <button class="tab-btn active" data-target="all">All</button>
-            <button class="tab-btn" data-target="fullstack">Full-Stack Apps</button>
-            <button class="tab-btn" data-target="systems">Systems Architecture</button>
-        </div>
-
-        <div class="projects-grid fade-in">
-            
-            <div class="card project-card" data-category="systems">
-                <div class="card-content">
-                    <h3 class="card-title">Logistics & Delivery Bot</h3>
-                    <p class="card-text">A logistics mapping system designed for local water suppliers. Features a WhatsApp bot interface and integrates M-Pesa for streamlined payment and delivery routing.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">M-Pesa API</span>
-                        <span class="tag">Logistics</span>
+    <main>
+        <section id="about" class="hero-section full-screen">
+            <div class="hero-grid">
+                
+                <div class="hero-text fade-in">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span> Available for Hire
                     </div>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/rayynaldgitau" target="_blank" class="github-link"><i class="fab fa-github"></i> View Source</a>
-                </div>
-            </div>
-
-            <div class="card project-card" data-category="fullstack">
-                <div class="card-content">
-                    <h3 class="card-title">Work-Study Tracker</h3>
-                    <p class="card-text">A multi-tenant web application engineered to manage university work-study programs across different departments, utilizing a robust relational database schema.</p>
-                    <div class="tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MySQL</span>
+                    <h1 class="hero-title">Raynald Gitau</h1>
+                    <h2 class="hero-subtitle">Junior Software Developer</h2>
+                    
+                    <p class="hero-desc">
+                        Enthusiastic about coding with a creative mindset and a friendly collaborative partner to everyone. Committed to learning more and improving skills with a good understanding of Android, PHP, and React JS.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="hire-me.html" class="btn primary-btn">Hire Me</a>
+                        <a href="assets/refreshed cv.pdf" target="_blank" class="btn secondary-btn"><i class="fas fa-file-pdf"></i> Download CV</a>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/rayynaldgitau" target="_blank" class="github-link"><i class="fab fa-github"></i> View Source</a>
-                </div>
-            </div>
 
-            <div class="card project-card" data-category="systems">
-                <div class="card-content">
-                    <h3 class="card-title">Pharmacy Inventory S&D</h3>
-                    <p class="card-text">A comprehensive Systems Analysis and Design project focused on mitigating stockouts. Features extensive requirements gathering and precise UML modeling.</p>
-                    <div class="tags">
-                        <span class="tag">System Design</span>
-                        <span class="tag">UML</span>
-                        <span class="tag">Architecture</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/rayynaldgitau" target="_blank" class="github-link"><i class="fab fa-github"></i> View Source</a>
-                </div>
-            </div>
-
-            <div class="card project-card" data-category="fullstack">
-                <div class="card-content">
-                    <h3 class="card-title">Utility Billing Platform</h3>
-                    <p class="card-text">End-to-end utility billing system architecture mapping out complex state transitions, managing automated billing cycles, and disconnection protocols.</p>
-                    <div class="tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Workflow Design</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/rayynaldgitau" target="_blank" class="github-link"><i class="fab fa-github"></i> View Source</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <section id="resume" class="section-container">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Curriculum Vitae</h2>
-            <p class="section-subtitle">My academic background and professional journey.</p>
-        </div>
-        
-        <div class="card fade-in" style="padding: 2.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem;">
-                <div>
-                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.25rem;">Raynald Waiganjo Gitau</h3>
-                    <p class="text-muted">Software Engineering Student</p>
-                </div>
-                <a href="assets/refreshed cv.pdf" target="_blank" class="btn primary-btn"><i class="fas fa-download"></i> Download Full PDF</a>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
-                <div>
-                    <h4 style="margin-bottom: 1.5rem; color: var(--foreground); border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-graduation-cap icon-muted"></i> Education
-                    </h4>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h5 style="font-weight: 600; font-size: 1.05rem;">United States International University-Africa (USIU-Africa)</h5>
-                        <p class="text-muted" style="font-size: 0.9rem; margin-top: 0.25rem;">BSc. Computer Science / Software Engineering</p>
-                        <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.25rem;"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <div class="social-links">
+                        <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/raynaldgitau" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:raynaldgitau@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads"><i class="fab fa-threads"></i></a>
                     </div>
                 </div>
 
-                <div>
-                    <h4 style="margin-bottom: 1.5rem; color: var(--foreground); border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-briefcase icon-muted"></i> Engineering Focus
-                    </h4>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h5 style="font-weight: 600; font-size: 1.05rem;">Full-Stack & Systems Architecture</h5>
-                        <p class="text-muted" style="font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.6;">
-                            Specializing in translating complex logistical and administrative problems into scalable software. Experienced in designing relational databases, building multi-tenant React/Node.js applications, and mapping comprehensive UML system architectures.
-                        </p>
+                <div class="hero-image-column fade-in">
+                    <div class="hero-pixel-frame">
+                        <img src="assets/profilePic.jpeg" alt="Raynald Gitau Portfolio Photo" class="hero-avatar" onerror="this.src='https://via.placeholder.com/320/1e293b/6ee7b7?text=Raynald+Gitau'">
                     </div>
                 </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section-container">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's collaborate on your next project or discuss software engineering opportunities.</p>
-        </div>
+        <section id="skills" class="section-container">
+            <div class="section-tag fade-in">// 01. PROFICIENCY_IN_PRACTICE</div>
+            <h2 class="section-title fade-in">Live Code Samples</h2>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;" class="fade-in">
-            
-            <div class="card">
-                <h3 class="card-title" style="margin-bottom: 1.5rem; font-size: 1.25rem;">Contact Details</h3>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
-                    <li style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="background: var(--secondary); padding: 0.85rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-envelope icon-muted" style="margin: 0; font-size: 1rem;"></i>
+            <div class="skills-tabs fade-in">
+                <button class="skill-tab active" data-skill="react"><i class="fab fa-react" style="color: #61dafb;"></i> React JS</button>
+                <button class="skill-tab" data-skill="php"><i class="fab fa-php" style="color: #777bb4;"></i> PHP & Laravel</button>
+                <button class="skill-tab" data-skill="node"><i class="fab fa-node-js" style="color: #339933;"></i> Node.js</button>
+                <button class="skill-tab" data-skill="python"><i class="fab fa-python" style="color: #3776ab;"></i> Python</button>
+            </div>
+
+            <div class="skills-showcase fade-in">
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
                         </div>
-                        <div>
-                            <p style="font-weight: 500; font-size: 0.9rem;">Email</p>
-                            <a href="mailto:raynaldgitau@gmail.com" class="text-muted" style="text-decoration: none; font-size: 0.9rem; transition: color 0.2s;">raynaldgitau@gmail.com</a>
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="background: var(--secondary); padding: 0.85rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-map-marker-alt icon-muted" style="margin: 0; font-size: 1rem;"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 500; font-size: 0.9rem;">Location</p>
-                            <p class="text-muted" style="font-size: 0.9rem;">Nairobi, Kenya</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                        <span class="file-name" id="skill-filename">Dashboard.jsx</span>
+                        <span class="skill-level-badge" id="skill-badge">Advanced</span>
+                    </div>
+                    <div class="code-window-body">
+                        <div class="line-numbers" id="line-numbers"></div>
+                        <pre><code id="code-content"></code></pre>
+                    </div>
+                </div>
 
-            <div class="card">
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submitted! Note: You will need to link this to a backend like Formspree to receive emails.');" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="name" style="font-size: 0.875rem; font-weight: 500;">Name</label>
-                        <input type="text" id="name" required class="form-input" placeholder="John Doe">
+                <div class="skills-sidebar">
+                    <div class="sidebar-card">
+                        <h4 class="card-label">MASTERY</h4>
+                        <div class="mastery-value"><span id="mastery-percent">85</span><span class="percent">%</span></div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="mastery-bar" style="width: 85%;"></div>
+                        </div>
+                        <p class="mastery-desc" id="mastery-desc">Advanced • UI/UX & Logic</p>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="email" style="font-size: 0.875rem; font-weight: 500;">Email Address</label>
-                        <input type="email" id="email" required class="form-input" placeholder="john@example.com">
+                    <div class="sidebar-card">
+                        <h4 class="card-label">USE CASES</h4>
+                        <div class="use-case-tags" id="use-cases"></div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="message" style="font-size: 0.875rem; font-weight: 500;">Message</label>
-                        <textarea id="message" rows="4" required class="form-input" placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary-btn" style="width: 100%; justify-content: center; margin-top: 0.5rem;">Send Message <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i></button>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
-<!-- Footer Section -->
+        </section>
+
+        <section id="experience" class="section-container">
+            <div class="section-tag fade-in">// 02. CAREER_PATH</div>
+            <h2 class="section-title fade-in">Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-header-flex">
+                            <div>
+                                <h3 class="role-title">Tutor <span class="badge-current">CURRENT</span></h3>
+                                <p class="company-name">Self-Employed &mdash; Nairobi, KE</p>
+                            </div>
+                            <span class="date-text">Aug 2023 &mdash; Present</span>
+                        </div>
+                        <p class="role-desc">Helping friends and neighbors in learning coding and preparing students for exams and presentations. Utilizing clear communication and collaborative teamwork to structure technical study sessions.</p>
+                        <div class="tech-tags">
+                            <span>Mentorship</span>
+                            <span>Communication</span>
+                            <span>Collaboration</span>
+                            <span>Teamwork</span>
+                            <span>Time Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section-container">
+            <div class="section-tag fade-in">// 03. ACADEMICS</div>
+            <h2 class="section-title fade-in">Education & Growth</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;" class="fade-in">
+                <div class="code-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">USIU-Africa</h3>
+                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">2025 &mdash; PRESENT</span>
+                    </div>
+                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">B.S. Software Engineering</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        Current undergraduate degree mapping advanced engineering logic, core systems analysis, architectural data patterns, and collaborative web frameworks.
+                    </p>
+                </div>
+
+                <div class="code-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">Institute of Software Technologies</h3>
+                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">NOV 2024</span>
+                    </div>
+                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">Diploma in Software Development</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        <strong>Relevant Coursework:</strong> Mobile development, PHP and Laravel, Node.js, React JS, API Design and Database for Devs.
+                    </p>
+                </div>
+
+                <div class="code-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">Emobilis</h3>
+                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">SEP 2023</span>
+                    </div>
+                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">Certificate in Software Development</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        <strong>Relevant Coursework:</strong> Python, HTML and CSS and Mobile Development.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-container">
+            <div class="section-tag fade-in">// 04. CASE_STUDIES</div>
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <p class="section-subtitle fade-in">Detailed breakdowns of software architectures and full-stack development implementations.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;" class="fade-in">
+                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Water Billing Platform</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">End-to-end utility billing system architecture managing automated cycles and account state routing.</p>
+                    <a href="project-water-billing.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
+                </div>
+
+                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Pharmacy Inventory S&D</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Systems Analysis and Design project targeting comprehensive operational stockout management blueprints.</p>
+                    <a href="project-pharmacy.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
+                </div>
+
+                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Events Hub Platform</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Dynamic web application streamlining real-time event discovery, host scheduling, and RSVP states.</p>
+                    <a href="project-events-hub.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <div class="section-tag fade-in">// 05. COMMUNICATION</div>
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            
+            <div class="hero-grid fade-in" style="gap: 2rem; align-items: start;">
+                <div class="code-card" style="padding: 2.5rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Contact Details</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><i class="fas fa-envelope" style="color: var(--accent-sage); width: 25px;"></i> <a href="mailto:raynaldgitau@gmail.com" style="color: var(--text-secondary); text-decoration: none;">raynaldgitau@gmail.com</a></li>
+                        <li><i class="fab fa-linkedin" style="color: var(--accent-sage); width: 25px;"></i> <a href="https://linkedin.com/in/raynaldgitau" target="_blank" style="color: var(--text-secondary); text-decoration: none;">linkedin.com/in/raynaldgitau</a></li>
+                        <li><i class="fab fa-github" style="color: var(--accent-sage); width: 25px;"></i> <a href="https://github.com/rayynaldgitau" target="_blank" style="color: var(--text-secondary); text-decoration: none;">github.com/rayynaldgitau</a></li>
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--accent-sage); width: 25px;"></i> <span style="color: var(--text-secondary);">Nairobi | Kenya</span></li>
+                    </ul>
+                </div>
+
+                <div class="code-card" style="padding: 2.5rem;">
+                    <form onsubmit="event.preventDefault(); alert('Please use the direct email link on the left.');" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <input type="text" placeholder="Your Name" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none;">
+                        <input type="email" placeholder="Your Email" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none;">
+                        <textarea rows="4" placeholder="How can I help you?" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; resize: vertical;"></textarea>
+                        <button type="submit" class="btn primary-btn" style="justify-content: center; width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2026 Raynald Waiganjo Gitau. All rights reserved.</p>
-                <div class="footer-links">
+            <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
+            <div class="social-links footer-socials">
                 <!-- GitHub -->
                 <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/raynaldgitau" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                <!-- LinkedIn (Replace with your actual URL) -->
+                <a href="https://linkedin.com/in/your-profile-here" target="_blank" aria-label="LinkedIn" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <!-- Threads -->
-                <a href="https://www.threads.com/@iiamshaker" target="_blank" aria-label="Threads" title="Threads">
+                <!-- Threads (Replace with your actual URL) -->
+                <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads">
                     <i class="fab fa-threads"></i>
                 </a>
-                <!-- Email -->
-                <a href="mailto:raynaldgitau@gmail.com" aria-label="Email" title="Email">
+                <!-- Email (Replace with your actual email) -->
+                <a href="mailto:your.email@example.com" aria-label="Email" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

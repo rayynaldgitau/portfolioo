@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Raynald Gitau | Junior Software Developer</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Specific style definitions to shrink containers into compact cards -->
+    <style>
+        .hire-page-title {
+            font-size: clamp(2rem, 4vw, 2.8rem); 
+            font-weight: 600; 
+            line-height: 1.2; 
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle-center {
+            color: var(--text-secondary); 
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* Constrain the grid size so cards stay compact on wide monitors */
+        .compact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 950px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .service-panel {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+        }
+
+        /* Fix positioning inside the code headers */
+        .card-header-aligned {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically centers headers and tags perfectly */
+            padding: 0.6rem 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-bottom: 1px solid var(--border-light);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+        }
+
+        .card-header-aligned span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Tighten internal card spacing */
+        .service-body-compact {
+            padding: 1.5rem; 
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1;
+        }
+
+        .panel-heading-compact {
+            color: var(--text-primary); 
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .service-desc-compact {
+            color: var(--text-secondary); 
+            font-size: 0.85rem; 
+            line-height: 1.6; 
+            margin-bottom: 1.5rem; 
+            flex-grow: 1;
+        }
+
+        .form-section-title {
+            color: var(--text-primary); 
+            font-size: 1.4rem; 
+            font-weight: 600; 
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            display: flex; 
+            flex-direction: column; 
+            gap: 0.4rem;
+        }
+
+        .form-label {
+            font-family: var(--font-mono); 
+            font-size: 0.7rem; 
+            color: var(--accent-sage);
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-ambient"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="nav-pixel-frame">
+                    <img src="profile.jpg" alt="Raynald Gitau" class="nav-avatar" onerror="this.src='https://via.placeholder.com/40/1e293b/6ee7b7?text=RG'">
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section-container" style="padding-top: 130px; min-height: 90vh;">
+        
+        <!-- Hero Summary Block -->
+        <div class="hero-text fade-in" style="text-align: center; max-width: 750px; margin: 0 auto 3rem auto;">
+            <div class="status-badge" style="margin-bottom: 1.2rem;">
+                <span class="pulse-dot"></span> Open for Freelance, Contracts & Mentorship
+            </div>
+            <h1 class="hire-page-title">Let's Build Something Exceptional</h1>
+            <p class="section-subtitle-center">
+                As a Software Engineering student at USIU-Africa with a proven background in full-stack engineering, I collaborate with teams and clients to deliver clean, maintainable logic.
+            </p>
+        </div>
+
+        <!-- Compact Dynamic Cards Grid -->
+        <div class="compact-cards-grid fade-in">
+            
+            <!-- Card 1: Development -->
+            <div class="code-card service-panel" id="panel-web" data-service="Web Application Development">
+                <div class="card-header-aligned">
+                    <span style="color: var(--accent-blue);"><i class="fas fa-laptop-code"></i> DEVELOPMENT</span>
+                    <span style="color: var(--accent-sage);">Full-Stack</span>
+                </div>
+                <div class="service-body-compact">
+                    <h3 class="panel-heading-compact">Web Application Design</h3>
+                    <p class="service-desc-compact">
+                        Building responsive, dynamic interface viewports using React JS[cite: 1], integrated with structured Node.js[cite: 1] or modern PHP/Laravel[cite: 1] backends.
+                    </p>
+                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Data Paths -->
+            <div class="code-card service-panel" id="panel-api" data-service="API Design & Infrastructure">
+                <div class="card-header-aligned">
+                    <span style="color: var(--accent-blue);"><i class="fas fa-database"></i> DATA PATHS</span>
+                    <span style="color: var(--accent-blue);">API Design</span>
+                </div>
+                <div class="service-body-compact">
+                    <h3 class="panel-heading-compact">API & Database Design</h3>
+                    <p class="service-desc-compact">
+                        Structuring normalized schema designs and backend developer APIs[cite: 1]. System endpoints are completely validated utilizing Postman[cite: 1] configurations.
+                    </p>
+                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Mentorship -->
+            <div class="code-card service-panel" id="panel-tutor" data-service="Technical Tutoring & Mentorship">
+                <div class="card-header-aligned">
+                    <span style="color: var(--accent-blue);"><i class="fas fa-chalkboard-teacher"></i> MENTORSHIP</span>
+                    <span style="color: #a78bfa;">1-on-1 Sessions</span>
+                </div>
+                <div class="service-body-compact">
+                    <h3 class="panel-heading-compact">Programming Tutor</h3>
+                    <p class="service-desc-compact">
+                        Providing technical coaching models[cite: 1]. Helping friends and neighbors understand code logic[cite: 1], manage database logic, and prepare for presentation workflows[cite: 1].
+                    </p>
+                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Intake Form Section -->
+        <div class="fade-in" style="max-width: 650px; margin: 0 auto;">
+            <div class="code-card" style="padding: 2rem; border-color: var(--border-light);">
+                <div style="margin-bottom: 1.5rem; text-align: center;">
+                    <h2 class="form-section-title">Intake Request</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Select an offering above or describe your project scope manually below.</p>
+                </div>
+
+                <form id="hire-form" onsubmit="event.preventDefault(); handleFormSubmit();" style="display: flex; flex-direction: column; gap: 1rem;">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; flex-wrap: wrap;">
+                        <div class="form-group">
+                            <label class="form-label">NAME</label>
+                            <input type="text" id="client-name" placeholder="Alex Chen" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; transition: border-color 0.2s;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">EMAIL</label>
+                            <input type="email" id="client-email" placeholder="alex@example.com" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; transition: border-color 0.2s;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" style="color: var(--accent-blue);">SELECTED TRACK</label>
+                        <input type="text" id="selected-service-field" readonly value="General Inquiry" style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: rgba(15, 23, 42, 0.6); color: var(--accent-blue); outline: none; font-size: 0.85rem; font-family: var(--font-mono); border-left: 3px solid var(--accent-blue);">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">PROJECT REQUIREMENTS OR SCOPE</label>
+                        <textarea id="project-scope" rows="4" placeholder="Outline what you are building or looking to learn..." required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; line-height: 1.5; resize: vertical; transition: border-color 0.2s;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn" style="justify-content: center; width: 100%; padding: 0.8rem; font-size: 0.95rem; margin-top: 0.5rem;">
+                        <i class="fas fa-paper-plane"></i> Initialize Integration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="footer-container">
+            <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
+            <div class="social-links footer-socials">
+                <!-- GitHub -->
+                <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- LinkedIn (Replace with your actual URL) -->
+                <a href="https://linkedin.com/in/your-profile-here" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <!-- Threads (Replace with your actual URL) -->
+                <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads">
+                    <i class="fab fa-threads"></i>
+                </a>
+                <!-- Email (Replace with your actual email) -->
+                <a href="mailto:your.email@example.com" aria-label="Email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script behaviors -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const panels = document.querySelectorAll('.service-panel');
+            const serviceField = document.getElementById('selected-service-field');
+            const scopeTextArea = document.getElementById('project-scope');
+
+            const templates = {
+                "Web Application Development": "Hi Raynald,\n\nI'm looking to build a custom web application. Here is a brief description of the functional goals, timeline, and front-end/back-end requirements:\n\n- Project Target:\n- Desired Stack Components (React/Node/Laravel):\n- Estimated Timeline:",
+                "API Design & Infrastructure": "Hi Raynald,\n\nI have an infrastructure requirement involving database architecture and secure API optimization rulesets. Here is a quick overview of what we need:\n\n- Current Database Environment:\n- Integration/Endpoint Parameters:\n- Postman Validation Requirements:",
+                "Technical Tutoring & Mentorship": "Hi Raynald,\n\nI'm looking to book engineering tutoring or study mentorship blocks. Here are the development core modules or tasks I want to prioritize:\n\n- Specific Concepts/Languages:\n- Assignment or Presentation Context:\n- Schedule Preference:"
+            };
+
+            panels.forEach(panel => {
+                const selectBtn = panel.querySelector('.select-service-btn');
+                
+                selectBtn.addEventListener('click', () => {
+                    panels.forEach(p => {
+                        p.style.borderColor = 'var(--border-light)';
+                        const btn = p.querySelector('.select-service-btn');
+                        btn.textContent = 'Select Service';
+                        btn.classList.add('secondary-btn');
+                        btn.classList.remove('primary-btn');
+                    });
+
+                    panel.style.borderColor = 'var(--accent-blue)';
+                    selectBtn.textContent = 'Selected Track';
+                    selectBtn.classList.remove('secondary-btn');
+                    selectBtn.classList.add('primary-btn');
+
+                    const trackName = panel.getAttribute('data-service');
+                    serviceField.value = trackName;
+                    scopeTextArea.value = templates[trackName] || '';
+                    scopeTextArea.focus();
+                    
+                    document.getElementById('hire-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+
+            const fields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+            fields.forEach(field => {
+                field.addEventListener('focus', () => field.style.borderColor = 'var(--accent-sage)');
+                field.addEventListener('blur', () => field.style.borderColor = 'var(--border-light)');
+            });
+        });
+
+        function handleFormSubmit() {
+            const name = document.getElementById('client-name').value;
+            const track = document.getElementById('selected-service-field').value;
+            const body = encodeURIComponent(document.getElementById('project-scope').value);
+            
+            const mailtoUrl = `mailto:raynaldgitau@gmail.com?subject=${encodeURIComponent('Project Intake: ' + track + ' - ' + name)}&body=${body}`;
+            window.location.href = mailtoUrl;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
