@@ -115,23 +115,24 @@
     </style>
 </head>
 <body>
-    <div class="bg-ambient"></div>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation -->
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <a href="index.html" class="logo-link">
-                <div class="nav-pixel-frame">
-                    <img src="profile.jpg" alt="Raynald Gitau" class="nav-avatar" onerror="this.src='https://via.placeholder.com/40/1e293b/6ee7b7?text=RG'">
-                </div>
+    <div class="bg-ambient" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="glass-header">
+        <nav class="nav-container" aria-label="Hire Page Navigation">
+            <a href="index.html" class="logo-link" aria-label="Raynald Gitau - Home">
+                <span class="logo-symbol">R</span><span class="logo-dot">.</span><span class="logo-name">Gitau</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a></li>
+                <li><a href="index.html" class="nav-item"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Portfolio</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main class="section-container" style="padding-top: 130px; min-height: 90vh;">
+    <main id="main-content" class="section-container" style="padding-top: 130px; min-height: 90vh;">
         
         <!-- Hero Summary Block -->
         <div class="hero-text fade-in" style="text-align: center; max-width: 750px; margin: 0 auto 3rem auto;">
@@ -236,21 +237,14 @@
         <div class="footer-container">
             <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
             <div class="social-links footer-socials">
-                <!-- GitHub -->
-                <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub" title="GitHub">
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new window)">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
-                <!-- LinkedIn (Replace with your actual URL) -->
-                <a href="https://linkedin.com/in/your-profile-here" target="_blank" aria-label="LinkedIn" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new window)">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <!-- Threads (Replace with your actual URL) -->
-                <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads" title="Threads">
-                    <i class="fab fa-threads"></i>
-                </a>
-                <!-- Email (Replace with your actual email) -->
-                <a href="mailto:your.email@example.com" aria-label="Email" title="Email">
-                    <i class="fas fa-envelope"></i>
+                <a href="mailto:raynaldgitau@gmail.com" aria-label="Email Raynald Gitau">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
         </div>

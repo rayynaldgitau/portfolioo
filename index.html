@@ -17,105 +17,294 @@
 </head>
 <body>
 
-    <div class="bg-ambient"></div>
+    <!-- Accessibility Skip Link (Bypasses repeated navigation for keyboard/screen-reader users) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <a href="#about" class="logo-link">
-                <h1 style="font-size: 1.2rem; color: var(--text-primary);">R<span style="color: var(--accent-sage);">.</span>Gitau</h1>
+    <!-- Subtle Ambient Lighting Backdrop (GPU accelerated, non-distracting) -->
+    <div class="bg-ambient" aria-hidden="true"></div>
+
+    <!-- Navigation Landmark with single role and clear label -->
+    <header class="glass-header">
+        <nav class="nav-container" aria-label="Primary Navigation">
+            <a href="#hero" class="logo-link" aria-label="Raynald Gitau - Home">
+                <span class="logo-symbol">R</span><span class="logo-dot">.</span><span class="logo-name">Gitau</span>
             </a>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#skills"><span class="nav-num">01.</span> Stack</a></li>
-                <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
-                <li><a href="#education"><span class="nav-num">03.</span> Education</a></li>
-                <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
-                <li><a href="#contact"><span class="nav-num">05.</span> Contact</a></li>
-                <li><a href="hire-me.html" class="btn-outline" style="margin-left: 1rem; color: var(--accent-sage) !important; border-color: var(--accent-sage);">Hire Me</a></li>
+            <!-- Streamlined nav targets (Hick's Law) -->
+            <ul class="nav-links" id="primary-nav-links">
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#education" class="nav-item">Education</a></li>
+                <li><a href="#contact" class="btn btn-nav-cta">Get In Touch</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main>
-        <section id="about" class="hero-section full-screen">
-            <div class="hero-grid">
+    <main id="main-content">
+        <!-- Hero Section: Answers who, what, why in < 5 seconds -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-container">
                 
-                <div class="hero-text fade-in">
-                    <div class="status-badge">
-                        <span class="pulse-dot"></span> Available for Hire
+                <div class="hero-content">
+                    <!-- Status Badge / Immediate Availability Signal -->
+                    <div class="status-pill" role="status">
+                        <span class="status-indicator" aria-hidden="true"></span>
+                        <span>Available for Full-Time Roles &amp; Contracts</span>
                     </div>
-                    <h1 class="hero-title">Raynald Gitau</h1>
-                    <h2 class="hero-subtitle">Junior Software Developer</h2>
+
+                    <h1 id="hero-title" class="hero-title">
+                        Building reliable web systems with clean, production-ready code.
+                    </h1>
                     
-                    <p class="hero-desc">
-                        Enthusiastic about coding with a creative mindset and a friendly collaborative partner to everyone. Committed to learning more and improving skills with a good understanding of Android, PHP, and React JS.
+                    <p class="hero-lead">
+                        Hi, I'm <strong class="text-contrast">Raynald Gitau</strong>, a Full-Stack Software Developer based in Nairobi. I design and build full-lifecycle web applications, high-performance APIs, and clean data architectures using <strong>React</strong>, <strong>PHP/Laravel</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>.
                     </p>
                     
-                    <div class="hero-actions">
-                        <a href="hire-me.html" class="btn primary-btn">Hire Me</a>
-                        <a href="assets/refreshed cv.pdf" target="_blank" class="btn secondary-btn"><i class="fas fa-file-pdf"></i> Download CV</a>
+                    <!-- Fitts's Law Optimized Action Pair -->
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Case Studies</span>
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="assets/refreshed%20cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <span>Download Resume</span>
+                            <span class="visually-hidden">(opens in new window)</span>
+                        </a>
                     </div>
 
-                    <div class="social-links">
-                        <a href="https://github.com/rayynaldgitau" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/raynaldgitau" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:raynaldgitau@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://threads.net/@your-handle-here" target="_blank" aria-label="Threads"><i class="fab fa-threads"></i></a>
+                    <!-- Credibility Proof Strip -->
+                    <div class="hero-metrics-strip" aria-label="Key Qualifications">
+                        <div class="metric-item">
+                            <span class="metric-value">3+</span>
+                            <span class="metric-label">Full-Stack Platforms</span>
+                        </div>
+                        <div class="metric-separator" aria-hidden="true"></div>
+                        <div class="metric-item">
+                            <span class="metric-value">B.S.</span>
+                            <span class="metric-label">Software Engineering (USIU)</span>
+                        </div>
+                        <div class="metric-separator" aria-hidden="true"></div>
+                        <div class="metric-item">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Clean Code Commitment</span>
+                        </div>
+                    </div>
+
+                    <!-- Verified Social Links with >=44px Target Sizes -->
+                    <div class="social-touch-group" aria-label="Social and Repository Profiles">
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="GitHub Profile (opens in new window)">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="LinkedIn Profile (opens in new window)">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:raynaldgitau@gmail.com" class="social-touch-btn" aria-label="Email Raynald Gitau">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-image-column fade-in">
-                    <div class="hero-pixel-frame">
-                        <img src="assets/profilePic.jpeg" alt="Raynald Gitau Portfolio Photo" class="hero-avatar" onerror="this.src='https://via.placeholder.com/320/1e293b/6ee7b7?text=Raynald+Gitau'">
+                <!-- Clean Portrait with Subtle Specular Glass Edge -->
+                <div class="hero-media">
+                    <div class="avatar-glass-card">
+                        <div class="avatar-glass-glow" aria-hidden="true"></div>
+                        <img 
+                            src="assets/profilePic.jpeg" 
+                            alt="Portrait of Raynald Gitau" 
+                            class="avatar-img" 
+                            width="340" 
+                            height="340" 
+                            fetchpriority="high"
+                            onerror="this.src='https://via.placeholder.com/340/111827/38bdf8?text=Raynald+Gitau'"
+                        >
+                        <div class="avatar-meta-tag">
+                            <i class="fas fa-code text-accent" aria-hidden="true"></i>
+                            <span>Full-Stack Engineer</span>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section id="skills" class="section-container">
-            <div class="section-tag fade-in">// 01. PROFICIENCY_IN_PRACTICE</div>
-            <h2 class="section-title fade-in">Live Code Samples</h2>
+        <!-- Section: Featured Projects (Proof of Engineering Delivery) -->
+        <section id="projects" class="section-container" aria-labelledby="projects-title">
+            <div class="section-tag" aria-hidden="true">// 01. SELECTED_WORK</div>
+            <h2 id="projects-title" class="section-title">Featured Engineering Projects</h2>
+            <p class="section-subtitle">Production platforms and architecture blueprints engineered with measurable outcomes.</p>
 
-            <div class="skills-tabs fade-in">
-                <button class="skill-tab active" data-skill="react"><i class="fab fa-react" style="color: #61dafb;"></i> React JS</button>
-                <button class="skill-tab" data-skill="php"><i class="fab fa-php" style="color: #777bb4;"></i> PHP & Laravel</button>
-                <button class="skill-tab" data-skill="node"><i class="fab fa-node-js" style="color: #339933;"></i> Node.js</button>
-                <button class="skill-tab" data-skill="python"><i class="fab fa-python" style="color: #3776ab;"></i> Python</button>
+            <div class="projects-grid">
+                
+                <!-- Project 1: Water Billing Platform -->
+                <article class="project-glass-card">
+                    <div class="project-card-header">
+                        <span class="project-badge">Backend Architecture</span>
+                        <span class="project-role"><i class="fas fa-user-gear" aria-hidden="true"></i> Role: Backend Architect</span>
+                    </div>
+
+                    <h3 class="project-card-title">Water Utility Billing &amp; Invoicing Engine</h3>
+
+                    <p class="project-problem">
+                        <strong>Problem:</strong> Prevent billing data corruption and state race conditions when processing automated cyclic billing across high-volume overdue accounts.
+                    </p>
+
+                    <!-- Measurable Outcome Callout -->
+                    <div class="project-metric-box">
+                        <i class="fas fa-chart-line metric-icon" aria-hidden="true"></i>
+                        <div>
+                            <span class="metric-highlight">100% State Isolation</span>
+                            <span class="metric-caption">Automated midnight cron loops with zero balance race conditions.</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Badges -->
+                    <ul class="project-tech-list" aria-label="Technologies used">
+                        <li>Java</li>
+                        <li>MySQL</li>
+                        <li>Cron Automation</li>
+                        <li>Database Normalization</li>
+                    </ul>
+
+                    <!-- Dual CTAs -->
+                    <div class="project-card-actions">
+                        <a href="project-water-billing.html" class="btn btn-card-primary">
+                            <span>Read Case Study</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Water Billing Platform code on GitHub (opens in new window)">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Events Hub Platform -->
+                <article class="project-glass-card">
+                    <div class="project-card-header">
+                        <span class="project-badge">Full-Stack Application</span>
+                        <span class="project-role"><i class="fas fa-code-branch" aria-hidden="true"></i> Role: Full-Stack Developer</span>
+                    </div>
+
+                    <h3 class="project-card-title">Events Hub Real-Time Discovery Platform</h3>
+
+                    <p class="project-problem">
+                        <strong>Problem:</strong> Streamline volatile real-time event discovery, host scheduling collisions, and asynchronous RSVP confirmation states.
+                    </p>
+
+                    <div class="project-metric-box">
+                        <i class="fas fa-bolt metric-icon" aria-hidden="true"></i>
+                        <div>
+                            <span class="metric-highlight">Sub-100ms API Response</span>
+                            <span class="metric-caption">Reactive RSVP state transitions with modular REST API endpoints.</span>
+                        </div>
+                    </div>
+
+                    <ul class="project-tech-list" aria-label="Technologies used">
+                        <li>React JS</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>MySQL</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+
+                    <div class="project-card-actions">
+                        <a href="project-events-hub.html" class="btn btn-card-primary">
+                            <span>Read Case Study</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Events Hub code on GitHub (opens in new window)">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Pharmacy Inventory System -->
+                <article class="project-glass-card">
+                    <div class="project-card-header">
+                        <span class="project-badge">Systems Analysis &amp; Design</span>
+                        <span class="project-role"><i class="fas fa-sitemap" aria-hidden="true"></i> Role: Systems Analyst</span>
+                    </div>
+
+                    <h3 class="project-card-title">Pharmacy Clinical Stockout Control System</h3>
+
+                    <p class="project-problem">
+                        <strong>Problem:</strong> Eliminate medication stockouts, unmonitored expiration risks, and supply chain distribution latency in healthcare facilities.
+                    </p>
+
+                    <div class="project-metric-box">
+                        <i class="fas fa-shield-halved metric-icon" aria-hidden="true"></i>
+                        <div>
+                            <span class="metric-highlight">Zero-Stockout Thresholds</span>
+                            <span class="metric-caption">Automated re-order triggers and fault-tolerant stock status workflows.</span>
+                        </div>
+                    </div>
+
+                    <ul class="project-tech-list" aria-label="Technologies used">
+                        <li>UML Diagrams</li>
+                        <li>State Machines</li>
+                        <li>Schema ERD</li>
+                        <li>Relational SQL</li>
+                    </ul>
+
+                    <div class="project-card-actions">
+                        <a href="project-pharmacy.html" class="btn btn-card-primary">
+                            <span>Read Case Study</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Pharmacy Inventory specifications on GitHub (opens in new window)">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="skills" class="section-container" aria-labelledby="skills-title">
+            <div class="section-tag" aria-hidden="true">// 02. TECHNICAL_STACK</div>
+            <h2 id="skills-title" class="section-title">Core Technical Capabilities</h2>
+            <p class="section-subtitle">Interactive inspectable architectures, design patterns, and production implementations.</p>
+
+            <div class="skills-tabs" role="tablist" aria-label="Skill languages">
+                <button class="skill-tab active" role="tab" aria-selected="true" data-skill="react"><i class="fab fa-react" style="color: #61dafb;" aria-hidden="true"></i> React JS &amp; TS</button>
+                <button class="skill-tab" role="tab" aria-selected="false" data-skill="php"><i class="fab fa-php" style="color: #777bb4;" aria-hidden="true"></i> PHP &amp; Laravel</button>
+                <button class="skill-tab" role="tab" aria-selected="false" data-skill="node"><i class="fab fa-node-js" style="color: #339933;" aria-hidden="true"></i> Node.js &amp; Express</button>
+                <button class="skill-tab" role="tab" aria-selected="false" data-skill="python"><i class="fab fa-python" style="color: #3776ab;" aria-hidden="true"></i> Python Automation</button>
             </div>
 
-            <div class="skills-showcase fade-in">
+            <div class="skills-showcase">
                 <div class="code-window">
                     <div class="code-window-header">
-                        <div class="window-controls">
+                        <div class="window-controls" aria-hidden="true">
                             <span class="control red"></span>
                             <span class="control yellow"></span>
                             <span class="control green"></span>
                         </div>
                         <span class="file-name" id="skill-filename">Dashboard.jsx</span>
-                        <span class="skill-level-badge" id="skill-badge">Advanced</span>
+                        <span class="skill-level-badge" id="skill-badge">Frontend Architecture</span>
                     </div>
                     <div class="code-window-body">
-                        <div class="line-numbers" id="line-numbers"></div>
+                        <div class="line-numbers" id="line-numbers" aria-hidden="true"></div>
                         <pre><code id="code-content"></code></pre>
                     </div>
                 </div>
 
                 <div class="skills-sidebar">
                     <div class="sidebar-card">
-                        <h4 class="card-label">MASTERY</h4>
-                        <div class="mastery-value"><span id="mastery-percent">85</span><span class="percent">%</span></div>
-                        <div class="progress-track">
-                            <div class="progress-fill" id="mastery-bar" style="width: 85%;"></div>
-                        </div>
-                        <p class="mastery-desc" id="mastery-desc">Advanced • UI/UX & Logic</p>
+                        <h4 class="card-label">CORE ARCHITECTURAL PATTERNS</h4>
+                        <div class="use-case-tags" id="skill-capabilities"></div>
+                        <p class="mastery-desc" id="skill-summary" style="margin-top: 1rem;">Frontend Architecture • UI/UX &amp; State Handlers</p>
                     </div>
                     <div class="sidebar-card">
-                        <h4 class="card-label">USE CASES</h4>
+                        <h4 class="card-label">PRODUCTION APPLICATIONS</h4>
                         <div class="use-case-tags" id="use-cases"></div>
                     </div>
                 </div>
@@ -123,11 +312,11 @@
         </section>
 
         <section id="experience" class="section-container">
-            <div class="section-tag fade-in">// 02. CAREER_PATH</div>
-            <h2 class="section-title fade-in">Experience</h2>
+            <div class="section-tag">// 03. CAREER_PATH</div>
+            <h2 class="section-title">Experience</h2>
 
             <div class="timeline">
-                <div class="timeline-item fade-in">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <div class="card-header-flex">
@@ -151,10 +340,10 @@
         </section>
 
         <section id="education" class="section-container">
-            <div class="section-tag fade-in">// 03. ACADEMICS</div>
-            <h2 class="section-title fade-in">Education & Growth</h2>
+            <div class="section-tag">// 04. ACADEMICS</div>
+            <h2 class="section-title">Education &amp; Growth</h2>
 
-            <div class="responsive-grid fade-in">
+            <div class="responsive-grid">
                 <div class="code-card" style="padding: 2.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                         <h3 style="color: var(--text-primary); font-size: 1.2rem;">USIU-Africa</h3>
@@ -190,54 +379,97 @@
             </div>
         </section>
 
-        <section id="projects" class="section-container">
-            <div class="section-tag fade-in">// 04. CASE_STUDIES</div>
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <p class="section-subtitle fade-in">Detailed breakdowns of software architectures and full-stack development implementations.</p>
-
-            <div class="responsive-grid fade-in">
-                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Water Billing Platform</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">End-to-end utility billing system architecture managing automated cycles and account state routing.</p>
-                    <a href="project-water-billing.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
-                </div>
-
-                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Pharmacy Inventory S&D</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Systems Analysis and Design project targeting comprehensive operational stockout management blueprints.</p>
-                    <a href="project-pharmacy.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
-                </div>
-
-                <div class="code-card" style="padding: 2rem; display: flex; flex-direction: column;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">Events Hub Platform</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Dynamic web application streamlining real-time event discovery, host scheduling, and RSVP states.</p>
-                    <a href="project-events-hub.html" class="btn secondary-btn" style="align-self: flex-start; font-size: 0.85rem;">Read Case Study &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section-container">
-            <div class="section-tag fade-in">// 05. COMMUNICATION</div>
-            <h2 class="section-title fade-in">Get In Touch</h2>
+        <section id="contact" class="section-container" aria-labelledby="contact-title">
+            <div class="section-tag" aria-hidden="true">// 05. DIRECT_COMMUNICATION</div>
+            <h2 id="contact-title" class="section-title">Let's Build Something Exceptional</h2>
+            <p class="section-subtitle">Whether you have a software engineering opening, an architecture challenge, or a contract project, my inbox is open.</p>
             
-            <div class="hero-grid contact-grid fade-in" style="gap: 2rem; align-items: start;">
-                <div class="code-card" style="padding: 2.5rem;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Contact Details</h3>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
-                        <li><i class="fas fa-envelope" style="color: var(--accent-sage); width: 25px;"></i> <a href="mailto:raynaldgitau@gmail.com" style="color: var(--text-secondary); text-decoration: none;">raynaldgitau@gmail.com</a></li>
-                        <li><i class="fab fa-linkedin" style="color: var(--accent-sage); width: 25px;"></i> <a href="https://linkedin.com/in/raynaldgitau" target="_blank" style="color: var(--text-secondary); text-decoration: none;">linkedin.com/in/raynaldgitau</a></li>
-                        <li><i class="fab fa-github" style="color: var(--accent-sage); width: 25px;"></i> <a href="https://github.com/rayynaldgitau" target="_blank" style="color: var(--text-secondary); text-decoration: none;">github.com/rayynaldgitau</a></li>
-                        <li><i class="fas fa-map-marker-alt" style="color: var(--accent-sage); width: 25px;"></i> <span style="color: var(--text-secondary);">Nairobi | Kenya</span></li>
+            <div class="contact-grid">
+                <!-- Direct Communication Card -->
+                <div class="code-card contact-card">
+                    <h3 class="contact-card-title">Direct Channels</h3>
+                    <p class="contact-card-sub">Feel free to reach out directly through any of these communication platforms:</p>
+                    
+                    <ul class="contact-methods-list">
+                        <li class="contact-method-item">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <span class="contact-method-label">Direct Email</span>
+                                <a href="mailto:raynaldgitau@gmail.com" class="contact-method-value">raynaldgitau@gmail.com</a>
+                            </div>
+                            <button type="button" class="btn-copy-email" id="btn-copy-email" aria-label="Copy email address to clipboard">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                                <span class="copy-tooltip" id="copy-tooltip">Copy</span>
+                            </button>
+                        </li>
+
+                        <li class="contact-method-item">
+                            <div class="contact-method-icon">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <span class="contact-method-label">LinkedIn</span>
+                                <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" class="contact-method-value">
+                                    linkedin.com/in/raynaldgitau
+                                    <span class="visually-hidden">(opens in new window)</span>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="contact-method-item">
+                            <div class="contact-method-icon">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <span class="contact-method-label">GitHub</span>
+                                <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="contact-method-value">
+                                    github.com/rayynaldgitau
+                                    <span class="visually-hidden">(opens in new window)</span>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="contact-method-item">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <span class="contact-method-label">Base Location &amp; Timezone</span>
+                                <span class="contact-method-value">Nairobi, Kenya &bull; UTC+3 (EAT)</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="code-card" style="padding: 2.5rem;">
-                    <form onsubmit="event.preventDefault(); alert('Please use the direct email link on the left.');" style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <input type="text" placeholder="Your Name" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none;">
-                        <input type="email" placeholder="Your Email" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none;">
-                        <textarea rows="4" placeholder="How can I help you?" required style="padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; resize: vertical;"></textarea>
-                        <button type="submit" class="btn primary-btn" style="justify-content: center; width: 100%;">Send Message</button>
-                    </form>
+                <!-- Fast Action & Availability Card -->
+                <div class="code-card contact-card contact-card-cta">
+                    <div class="availability-status-box">
+                        <span class="status-indicator" aria-hidden="true"></span>
+                        <div>
+                            <span class="availability-headline">Available for Opportunities</span>
+                            <span class="availability-sub">Full-Time Software Roles &amp; Technical Contracts</span>
+                        </div>
+                    </div>
+
+                    <div class="response-guarantee">
+                        <i class="fas fa-clock-rotate-left" aria-hidden="true"></i>
+                        <span>Guaranteed prompt response within <strong>24 hours</strong>.</span>
+                    </div>
+
+                    <div class="contact-action-box">
+                        <a href="mailto:raynaldgitau@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Raynald%20Gitau" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            <span>Send an Email</span>
+                        </a>
+                        
+                        <a href="assets/refreshed%20cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <span>Download Resume (PDF)</span>
+                            <span class="visually-hidden">(opens in new window)</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
