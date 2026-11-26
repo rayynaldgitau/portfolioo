@@ -366,6 +366,152 @@ function initCopyEmail() {
     });
 }
 
+/**
+ * Controls lazy-loaded Folderly preview video playback (hover on desktop,
+ * scroll/tap on mobile, poster-only under reduced motion) and detail modal.
+ * @returns {void}
+ */
+function initFolderlyShowcase() {
+    const previewVideo = document.getElementById('folderly-preview-video');
+    const previewToggle = document.getElementById('folderly-preview-toggle');
+    const openModalBtn = document.getElementById('open-folderly-modal');
+    const modal = document.getElementById('folderly-modal');
+    const modalVideo = document.getElementById('folderly-modal-video');
+    const closeModalBtn = document.getElementById('close-folderly-modal');
+
+    if (!previewVideo) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let userPausedManually = false;
+
+    /**
+     * Syncs the preview play/pause toggle button icon and ARIA state.
+     * @param {boolean} isPlaying - Whether preview video is playing.
+     * @returns {void}
+     */
+    function syncToggleUI(isPlaying) {
+        if (!previewToggle) return;
+        previewToggle.setAttribute('aria-pressed', String(isPlaying));
+        previewToggle.setAttribute('aria-label', isPlaying ? 'Pause Folderly preview video' : 'Play Folderly preview video');
+        const playIcon = previewToggle.querySelector('.icon-play');
+        const pauseIcon = previewToggle.querySelector('.icon-pause');
+        if (playIcon && pauseIcon) {
+            playIcon.style.display = isPlaying ? 'none' : 'block';
+            pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        }
+    }
+
+    /**
+     * Attempts muted preview playback and updates toggle UI.
+     * @returns {void}
+     */
+    function playPreview() {
+        if (modal && modal.open) return;
+        previewVideo.play().then(() => {
+            syncToggleUI(true);
+        }).catch(() => {
+            syncToggleUI(false);
+        });
+    }
+
+    /**
+     * Pauses preview playback and updates toggle UI.
+     * @returns {void}
+     */
+    function pausePreview() {
+        previewVideo.pause();
+        syncToggleUI(false);
+    }
+
+    previewVideo.addEventListener('play', () => syncToggleUI(true));
+    previewVideo.addEventListener('pause', () => syncToggleUI(false));
+
+    if (previewToggle) {
+        previewToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (previewVideo.paused) {
+                userPausedManually = false;
+                playPreview();
+            } else {
+                userPausedManually = true;
+                pausePreview();
+            }
+        });
+    }
+
+    const mediaShell = previewVideo.closest('.project-media-shell');
+
+    if (!reduceMotion) {
+        if (finePointer && mediaShell) {
+            mediaShell.addEventListener('mouseenter', () => {
+                if (!userPausedManually) playPreview();
+            });
+            mediaShell.addEventListener('mouseleave', pausePreview);
+        } else if (mediaShell) {
+            previewVideo.addEventListener('click', () => {
+                if (previewVideo.paused) {
+                    userPausedManually = false;
+                    playPreview();
+                } else {
+                    userPausedManually = true;
+                    pausePreview();
+                }
+            });
+        }
+    }
+
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    pausePreview();
+                } else if (!reduceMotion && !finePointer && !userPausedManually) {
+                    playPreview();
+                }
+            });
+        }, { threshold: 0.25 });
+        videoObserver.observe(previewVideo);
+    }
+
+    if (openModalBtn && modal) {
+        openModalBtn.addEventListener('click', () => {
+            pausePreview();
+            modal.showModal();
+        });
+    }
+
+    if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.close();
+        });
+    }
+
+    if (modal) {
+        // Fallback light-dismiss for browsers without <dialog closedby="any">
+        if (!('closedBy' in HTMLDialogElement.prototype)) {
+            modal.addEventListener('click', (event) => {
+                if (event.target !== modal) return;
+                const rect = modal.getBoundingClientRect();
+                const inside = (
+                    rect.top <= event.clientY &&
+                    event.clientY <= rect.top + rect.height &&
+                    rect.left <= event.clientX &&
+                    event.clientX <= rect.left + rect.width
+                );
+                if (!inside) modal.close();
+            });
+        }
+
+        modal.addEventListener('close', () => {
+            if (modalVideo) {
+                modalVideo.pause();
+            }
+            if (openModalBtn) openModalBtn.focus();
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initAccessibleNav();
@@ -373,4 +519,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initDecorativeParallax();
     initSkillShowcase();
     initCopyEmail();
+    initFolderlyShowcase();
 });
