@@ -320,28 +320,34 @@ p {
 
 .logo-link {
     text-decoration: none;
-    font-family: var(--md-ref-typeface-brand);
-    font-size: 1.375rem;
-    font-weight: 800;
-    color: var(--md-sys-color-on-surface);
-    letter-spacing: -0.03em;
     min-height: var(--md-sys-touch-target);
-    padding: 0 var(--md-sys-space-2);
+    padding: 0 var(--md-sys-space-1);
     display: inline-flex;
     align-items: center;
-    gap: 2px;
     border-radius: var(--md-sys-shape-corner-full);
+    transition: transform var(--duration-press) var(--ease-out);
 }
 
-.logo-dot {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border-radius: var(--md-sys-shape-corner-full);
-    background-color: var(--md-sys-color-tertiary);
-    margin: 0 2px;
-    align-self: flex-end;
-    margin-bottom: 11px;
+.logo-link:active {
+    transform: scale(0.97);
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-img-dark {
+    display: none;
+}
+
+[data-scheme="dark"] .logo-img-light {
+    display: none;
+}
+
+[data-scheme="dark"] .logo-img-dark {
+    display: block;
 }
 
 .nav-actions-right {
