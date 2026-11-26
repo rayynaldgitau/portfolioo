@@ -3,292 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raynald Gitau</title>
-    
+    <meta name="description" content="Raynald Gitau — Full-Stack Software Developer building reliable web applications, APIs, and data architectures with React, PHP/Laravel, Node.js, and TypeScript.">
+    <title>Raynald Gitau — Full-Stack Software Developer</title>
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
 
+    <!-- Set scheme before first paint to prevent theme flash -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('m3-scheme');
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.scheme = dark ? 'dark' : 'light';
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- SVG ClipPath Definitions for M3 Expressive Cookie & Blob Masks -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <clipPath id="m3-cookie-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.5,0.03 C 0.59,0.03 0.63,0.08 0.72,0.09 C 0.81,0.10 0.89,0.16 0.91,0.25 C 0.92,0.34 0.97,0.40 0.97,0.50 C 0.97,0.60 0.92,0.66 0.91,0.75 C 0.89,0.84 0.81,0.90 0.72,0.91 C 0.63,0.92 0.59,0.97 0.50,0.97 C 0.41,0.97 0.37,0.92 0.28,0.91 C 0.19,0.90 0.11,0.84 0.09,0.75 C 0.08,0.66 0.03,0.60 0.03,0.50 C 0.03,0.40 0.08,0.34 0.09,0.25 C 0.11,0.16 0.19,0.10 0.28,0.09 C 0.37,0.08 0.41,0.03 0.50,0.03 Z" />
+            </clipPath>
+        </defs>
+    </svg>
 
-    <!-- Accessibility Skip Link (Bypasses repeated navigation for keyboard/screen-reader users) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Subtle Ambient Lighting Backdrop (GPU accelerated, non-distracting) -->
-    <div class="bg-ambient" aria-hidden="true"></div>
+    <!-- Decorative Geometric Accents Layer (Behind Content) -->
+    <div class="expressive-bg-layer" aria-hidden="true">
+        <svg class="geo-accent geo-star-1" data-parallax="0.06" viewBox="0 0 48 48" fill="currentColor">
+            <path d="M24 2L29.5 18.5L46 24L29.5 29.5L24 46L18.5 29.5L2 24L18.5 18.5L24 2Z"/>
+        </svg>
+        <svg class="geo-accent geo-circle-1" data-parallax="-0.05" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="5">
+            <circle cx="16" cy="16" r="11"/>
+        </svg>
+        <svg class="geo-accent geo-squiggle-1" data-parallax="0.04" viewBox="0 0 120 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <path d="M4 16 Q 19 2, 34 16 T 64 16 T 94 16 T 116 16"/>
+        </svg>
+        <svg class="geo-accent geo-arc-1" data-parallax="-0.04" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+            <path d="M12 52 A 40 40 0 0 1 52 12"/>
+        </svg>
+    </div>
 
-    <!-- Navigation Landmark with single role and clear label -->
-    <header class="glass-header">
+    <!-- M3 Top App Bar -->
+    <header class="m3-app-bar">
         <nav class="nav-container" aria-label="Primary Navigation">
-            <a href="#hero" class="logo-link" aria-label="Raynald Gitau - Home">
-                <span class="logo-symbol">R</span><span class="logo-dot">.</span><span class="logo-name">Gitau</span>
+            <a href="#hero" class="logo-link" aria-label="Raynald Gitau — Home">
+                <span>R</span><span class="logo-dot" aria-hidden="true"></span><span>Gitau</span>
             </a>
-            
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
 
-            <!-- Streamlined nav targets (Hick's Law) -->
-            <ul class="nav-links" id="primary-nav-links">
-                <li><a href="#projects" class="nav-item">Projects</a></li>
-                <li><a href="#skills" class="nav-item">Skills</a></li>
-                <li><a href="#experience" class="nav-item">Experience</a></li>
-                <li><a href="#education" class="nav-item">Education</a></li>
-                <li><a href="#contact" class="btn btn-nav-cta">Get In Touch</a></li>
-            </ul>
+            <div class="nav-actions-right">
+                <ul class="nav-links" id="primary-nav-links">
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
+                    <li><a href="#experience" class="nav-item">Experience</a></li>
+                    <li><a href="#contact" class="btn-nav-cta">Get in touch</a></li>
+                </ul>
+
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-pressed="false" aria-label="Switch to dark theme">
+                    <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+                        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+
+                <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+                    <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"/>
+                    </svg>
+                    <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="display:none">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main id="main-content">
-        <!-- Hero Section: Answers who, what, why in < 5 seconds -->
+        <!-- Hero Section -->
         <section id="hero" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-container">
-                
                 <div class="hero-content">
-                    <!-- Status Badge / Immediate Availability Signal -->
-                    <div class="status-pill" role="status">
-                        <span class="status-indicator" aria-hidden="true"></span>
+                    <div class="status-pill" role="status" data-reveal style="--reveal-delay: 0ms;">
+                        <svg class="status-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/>
+                        </svg>
                         <span>Available for Full-Time Roles &amp; Contracts</span>
                     </div>
 
-                    <h1 id="hero-title" class="hero-title">
+                    <h1 id="hero-title" class="hero-title" data-reveal style="--reveal-delay: 40ms;">
                         Building reliable web systems with clean, production-ready code.
                     </h1>
-                    
-                    <p class="hero-lead">
-                        Hi, I'm <strong class="text-contrast">Raynald Gitau</strong>, a Full-Stack Software Developer based in Nairobi. I design and build full-lifecycle web applications, high-performance APIs, and clean data architectures using <strong>React</strong>, <strong>PHP/Laravel</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>.
+
+                    <p class="hero-lead" data-reveal style="--reveal-delay: 90ms;">
+                        Hi, I'm <strong>Raynald Gitau</strong>, a Full-Stack Software Developer based in Nairobi. I design and build full-lifecycle web applications, high-performance APIs, and clean data architectures using <strong>React</strong>, <strong>PHP/Laravel</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>.
                     </p>
-                    
-                    <!-- Fitts's Law Optimized Action Pair -->
-                    <div class="hero-cta-group">
+
+                    <div class="hero-cta-group" data-reveal style="--reveal-delay: 130ms;">
                         <a href="#projects" class="btn btn-primary">
                             <span>Explore Case Studies</span>
-                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                            </svg>
                         </a>
                         <a href="assets/refreshed%20cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/>
+                            </svg>
                             <span>Download Resume</span>
                             <span class="visually-hidden">(opens in new window)</span>
                         </a>
                     </div>
 
-                    <!-- Credibility Proof Strip -->
-                    <div class="hero-metrics-strip" aria-label="Key Qualifications">
-                        <div class="metric-item">
+                    <div class="hero-metrics-strip" aria-label="Key Qualifications" data-reveal style="--reveal-delay: 160ms;">
+                        <div class="metric-pill-card">
                             <span class="metric-value">3+</span>
                             <span class="metric-label">Full-Stack Platforms</span>
                         </div>
-                        <div class="metric-separator" aria-hidden="true"></div>
-                        <div class="metric-item">
+                        <div class="metric-pill-card">
                             <span class="metric-value">B.S.</span>
-                            <span class="metric-label">Software Engineering (USIU)</span>
+                            <span class="metric-label">Software Eng. (USIU)</span>
                         </div>
-                        <div class="metric-separator" aria-hidden="true"></div>
-                        <div class="metric-item">
+                        <div class="metric-pill-card">
                             <span class="metric-value">100%</span>
-                            <span class="metric-label">Clean Code Commitment</span>
+                            <span class="metric-label">Clean Code Focus</span>
                         </div>
                     </div>
 
-                    <!-- Verified Social Links with >=44px Target Sizes -->
                     <div class="social-touch-group" aria-label="Social and Repository Profiles">
                         <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="GitHub Profile (opens in new window)">
-                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
                         </a>
                         <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="LinkedIn Profile (opens in new window)">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
                         </a>
                         <a href="mailto:raynaldgitau@gmail.com" class="social-touch-btn" aria-label="Email Raynald Gitau">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Clean Portrait with Subtle Specular Glass Edge -->
-                <div class="hero-media">
-                    <div class="avatar-glass-card">
-                        <div class="avatar-glass-glow" aria-hidden="true"></div>
-                        <img 
-                            src="assets/profilePic.jpeg" 
-                            alt="Portrait of Raynald Gitau" 
-                            class="avatar-img" 
-                            width="340" 
-                            height="340" 
+                <div class="hero-media" data-reveal style="--reveal-delay: 80ms;">
+                    <svg class="hero-blob-backdrop" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
+                        <path d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,72.9,41.8C64.4,54.4,53,65,39.7,72.9C26.4,80.8,11.2,86,-3.6,85.2C-18.4,84.4,-32.8,77.6,-45.8,69.1C-58.8,60.6,-70.4,50.4,-77.9,37.4C-85.4,24.4,-88.8,8.6,-86.6,-6.4C-84.4,-21.4,-76.6,-35.6,-66.1,-47.1C-55.6,-58.6,-42.4,-67.4,-28.6,-74.5C-14.8,-81.6,-0.4,-87,14.6,-86.1C29.6,-85.2,44.7,-78,44.7,-76.4Z" transform="translate(100 100)" />
+                    </svg>
+                    <div class="avatar-cookie-frame">
+                        <img
+                            src="assets/profilePic.jpeg"
+                            alt="Portrait of Raynald Gitau"
+                            class="avatar-cookie-img"
+                            width="340"
+                            height="340"
                             fetchpriority="high"
-                            onerror="this.src='https://via.placeholder.com/340/111827/38bdf8?text=Raynald+Gitau'"
+                            decoding="async"
                         >
-                        <div class="avatar-meta-tag">
-                            <i class="fas fa-code text-accent" aria-hidden="true"></i>
+                        <div class="avatar-flower-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                            </svg>
                             <span>Full-Stack Engineer</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Section: Featured Projects (Proof of Engineering Delivery) -->
+        <!-- Wavy Section Divider -->
+        <svg class="wavy-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M0 14 Q 30 2, 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14" stroke="var(--md-sys-color-primary)" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+        </svg>
+
+        <!-- Section: Featured Projects (Asymmetric Bento Layout) -->
         <section id="projects" class="section-container" aria-labelledby="projects-title">
-            <div class="section-tag" aria-hidden="true">// 01. SELECTED_WORK</div>
-            <h2 id="projects-title" class="section-title">Featured Engineering Projects</h2>
-            <p class="section-subtitle">Production platforms and architecture blueprints engineered with measurable outcomes.</p>
+            <div class="section-header" data-reveal>
+                <div class="section-kicker">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/>
+                    </svg>
+                    <span>Selected Work</span>
+                </div>
+                <h2 id="projects-title" class="section-title">Featured Engineering Projects</h2>
+                <p class="section-subtitle">Production platforms and architecture blueprints engineered with measurable outcomes.</p>
+            </div>
 
-            <div class="projects-grid">
-                
-                <!-- Project 1: Water Billing Platform -->
-                <article class="project-glass-card">
-                    <div class="project-card-header">
-                        <span class="project-badge">Backend Architecture</span>
-                        <span class="project-role"><i class="fas fa-user-gear" aria-hidden="true"></i> Role: Backend Architect</span>
-                    </div>
-
-                    <h3 class="project-card-title">Water Utility Billing &amp; Invoicing Engine</h3>
-
-                    <p class="project-problem">
-                        <strong>Problem:</strong> Prevent billing data corruption and state race conditions when processing automated cyclic billing across high-volume overdue accounts.
-                    </p>
-
-                    <!-- Measurable Outcome Callout -->
-                    <div class="project-metric-box">
-                        <i class="fas fa-chart-line metric-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="metric-highlight">100% State Isolation</span>
-                            <span class="metric-caption">Automated midnight cron loops with zero balance race conditions.</span>
+            <div class="projects-bento">
+                <!-- Featured Full-Width Card -->
+                <article class="project-card project-card--featured" data-reveal style="--reveal-delay: 0ms;">
+                    <div class="project-card-main">
+                        <div class="project-card-meta">
+                            <span class="project-type-pill">Backend Architecture</span>
+                            <span class="project-role-text">Role: Backend Architect</span>
+                        </div>
+                        <h3 class="project-card-title">Water Utility Billing &amp; Invoicing Engine</h3>
+                        <p class="project-problem">
+                            <strong>Problem:</strong> Prevent billing data corruption and state race conditions when processing automated cyclic billing across high-volume overdue accounts.
+                        </p>
+                        <ul class="project-chip-list" aria-label="Technologies used">
+                            <li>Java</li>
+                            <li>MySQL</li>
+                            <li>Cron Automation</li>
+                            <li>Database Normalization</li>
+                        </ul>
+                        <div class="project-card-actions">
+                            <a href="project-water-billing.html" class="btn btn-primary">
+                                <span>Read Case Study</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-text" aria-label="View Water Billing Platform source code on GitHub (opens in new window)">
+                                <span>Source Code</span>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Tech Stack Badges -->
-                    <ul class="project-tech-list" aria-label="Technologies used">
-                        <li>Java</li>
-                        <li>MySQL</li>
-                        <li>Cron Automation</li>
-                        <li>Database Normalization</li>
-                    </ul>
-
-                    <!-- Dual CTAs -->
-                    <div class="project-card-actions">
-                        <a href="project-water-billing.html" class="btn btn-card-primary">
-                            <span>Read Case Study</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Water Billing Platform code on GitHub (opens in new window)">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
+                    <div class="project-metric-panel">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>
+                        </svg>
+                        <div>
+                            <span class="metric-highlight">100% State Isolation</span>
+                            <span class="metric-caption">Automated midnight cron loops with zero balance race conditions and atomic ledger transactions.</span>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 2: Events Hub Platform -->
-                <article class="project-glass-card">
-                    <div class="project-card-header">
-                        <span class="project-badge">Full-Stack Application</span>
-                        <span class="project-role"><i class="fas fa-code-branch" aria-hidden="true"></i> Role: Full-Stack Developer</span>
+                <!-- Left Card (7 cols) -->
+                <article class="project-card project-card--left" data-reveal style="--reveal-delay: 50ms;">
+                    <div class="project-card-meta">
+                        <span class="project-type-pill">Full-Stack Application</span>
+                        <span class="project-role-text">Role: Full-Stack Developer</span>
                     </div>
-
                     <h3 class="project-card-title">Events Hub Real-Time Discovery Platform</h3>
-
                     <p class="project-problem">
                         <strong>Problem:</strong> Streamline volatile real-time event discovery, host scheduling collisions, and asynchronous RSVP confirmation states.
                     </p>
-
-                    <div class="project-metric-box">
-                        <i class="fas fa-bolt metric-icon" aria-hidden="true"></i>
+                    <div class="project-metric-panel">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
                         <div>
                             <span class="metric-highlight">Sub-100ms API Response</span>
-                            <span class="metric-caption">Reactive RSVP state transitions with modular REST API endpoints.</span>
+                            <span class="metric-caption">Reactive RSVP state transitions with modular REST endpoints.</span>
                         </div>
                     </div>
-
-                    <ul class="project-tech-list" aria-label="Technologies used">
+                    <ul class="project-chip-list" aria-label="Technologies used">
                         <li>React JS</li>
                         <li>Node.js</li>
                         <li>Express</li>
                         <li>MySQL</li>
                         <li>RESTful APIs</li>
                     </ul>
-
                     <div class="project-card-actions">
-                        <a href="project-events-hub.html" class="btn btn-card-primary">
+                        <a href="project-events-hub.html" class="btn btn-secondary">
                             <span>Read Case Study</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
                         </a>
-                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Events Hub code on GitHub (opens in new window)">
-                            <i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-text" aria-label="View Events Hub source code on GitHub (opens in new window)">
                             <span>Source Code</span>
                         </a>
                     </div>
                 </article>
 
-                <!-- Project 3: Pharmacy Inventory System -->
-                <article class="project-glass-card">
-                    <div class="project-card-header">
-                        <span class="project-badge">Systems Analysis &amp; Design</span>
-                        <span class="project-role"><i class="fas fa-sitemap" aria-hidden="true"></i> Role: Systems Analyst</span>
+                <!-- Right Card (5 cols) -->
+                <article class="project-card project-card--right" data-reveal style="--reveal-delay: 90ms;">
+                    <div class="project-card-meta">
+                        <span class="project-type-pill">Systems Analysis &amp; Design</span>
+                        <span class="project-role-text">Role: Systems Analyst</span>
                     </div>
-
-                    <h3 class="project-card-title">Pharmacy Clinical Stockout Control System</h3>
-
+                    <h3 class="project-card-title">Pharmacy Clinical Stockout Control</h3>
                     <p class="project-problem">
-                        <strong>Problem:</strong> Eliminate medication stockouts, unmonitored expiration risks, and supply chain distribution latency in healthcare facilities.
+                        <strong>Problem:</strong> Eliminate medication stockouts, unmonitored expiration risks, and supply chain latency in clinics.
                     </p>
-
-                    <div class="project-metric-box">
-                        <i class="fas fa-shield-halved metric-icon" aria-hidden="true"></i>
+                    <div class="project-metric-panel">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
                         <div>
                             <span class="metric-highlight">Zero-Stockout Thresholds</span>
-                            <span class="metric-caption">Automated re-order triggers and fault-tolerant stock status workflows.</span>
+                            <span class="metric-caption">Automated re-order triggers and fault-tolerant stock workflows.</span>
                         </div>
                     </div>
-
-                    <ul class="project-tech-list" aria-label="Technologies used">
+                    <ul class="project-chip-list" aria-label="Technologies used">
                         <li>UML Diagrams</li>
                         <li>State Machines</li>
                         <li>Schema ERD</li>
                         <li>Relational SQL</li>
                     </ul>
-
                     <div class="project-card-actions">
-                        <a href="project-pharmacy.html" class="btn btn-card-primary">
+                        <a href="project-pharmacy.html" class="btn btn-tonal">
                             <span>Read Case Study</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
                         </a>
-                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-card-ghost" aria-label="View Pharmacy Inventory specifications on GitHub (opens in new window)">
-                            <i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="btn btn-text" aria-label="View Pharmacy Inventory specs on GitHub (opens in new window)">
                             <span>Source Code</span>
                         </a>
                     </div>
                 </article>
-
             </div>
         </section>
 
-        <section id="skills" class="section-container" aria-labelledby="skills-title">
-            <div class="section-tag" aria-hidden="true">// 02. TECHNICAL_STACK</div>
-            <h2 id="skills-title" class="section-title">Core Technical Capabilities</h2>
-            <p class="section-subtitle">Interactive inspectable architectures, design patterns, and production implementations.</p>
+        <!-- Wavy Divider (Tertiary Accent) -->
+        <svg class="wavy-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M0 14 C 150 26, 300 2, 450 14 C 600 26, 750 2, 900 14 C 1050 26, 1125 6, 1200 14" stroke="var(--md-sys-color-tertiary)" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+        </svg>
 
-            <div class="skills-tabs" role="tablist" aria-label="Skill languages">
-                <button class="skill-tab active" role="tab" aria-selected="true" data-skill="react"><i class="fab fa-react" style="color: #61dafb;" aria-hidden="true"></i> React JS &amp; TS</button>
-                <button class="skill-tab" role="tab" aria-selected="false" data-skill="php"><i class="fab fa-php" style="color: #777bb4;" aria-hidden="true"></i> PHP &amp; Laravel</button>
-                <button class="skill-tab" role="tab" aria-selected="false" data-skill="node"><i class="fab fa-node-js" style="color: #339933;" aria-hidden="true"></i> Node.js &amp; Express</button>
-                <button class="skill-tab" role="tab" aria-selected="false" data-skill="python"><i class="fab fa-python" style="color: #3776ab;" aria-hidden="true"></i> Python Automation</button>
+        <!-- Section: Skills & Interactive Architecture Explorer -->
+        <section id="skills" class="section-container" aria-labelledby="skills-title">
+            <div class="section-header" data-reveal>
+                <div class="section-kicker">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                    <span>Technical Stack</span>
+                </div>
+                <h2 id="skills-title" class="section-title">Core Technical Capabilities</h2>
+                <p class="section-subtitle">Interactive code patterns, architecture choices, and production use cases.</p>
             </div>
 
-            <div class="skills-showcase">
+            <div class="skills-tabs" role="tablist" aria-label="Skill languages">
+                <button type="button" class="skill-tab active" role="tab" aria-selected="true" data-skill="react">React JS &amp; TS</button>
+                <button type="button" class="skill-tab" role="tab" aria-selected="false" data-skill="php">PHP &amp; Laravel</button>
+                <button type="button" class="skill-tab" role="tab" aria-selected="false" data-skill="node">Node.js &amp; Express</button>
+                <button type="button" class="skill-tab" role="tab" aria-selected="false" data-skill="python">Python Automation</button>
+            </div>
+
+            <div class="skills-showcase" data-reveal>
                 <div class="code-window">
                     <div class="code-window-header">
-                        <div class="window-controls" aria-hidden="true">
-                            <span class="control red"></span>
-                            <span class="control yellow"></span>
-                            <span class="control green"></span>
-                        </div>
-                        <span class="file-name" id="skill-filename">Dashboard.jsx</span>
+                        <span class="file-name" id="skill-filename">UserDashboard.tsx</span>
                         <span class="skill-level-badge" id="skill-badge">Frontend Architecture</span>
                     </div>
                     <div class="code-window-body">
@@ -298,116 +362,136 @@
                 </div>
 
                 <div class="skills-sidebar">
-                    <div class="sidebar-card">
-                        <h4 class="card-label">CORE ARCHITECTURAL PATTERNS</h4>
-                        <div class="use-case-tags" id="skill-capabilities"></div>
-                        <p class="mastery-desc" id="skill-summary" style="margin-top: 1rem;">Frontend Architecture • UI/UX &amp; State Handlers</p>
+                    <div class="sidebar-card sidebar-card--accent">
+                        <h3 class="card-label">Core Architectural Patterns</h3>
+                        <div class="m3-chip-group" id="skill-capabilities"></div>
+                        <p class="mastery-desc" id="skill-summary">Modular state management, custom hook isolation, and sub-16ms virtual DOM updates.</p>
                     </div>
                     <div class="sidebar-card">
-                        <h4 class="card-label">PRODUCTION APPLICATIONS</h4>
-                        <div class="use-case-tags" id="use-cases"></div>
+                        <h3 class="card-label">Production Applications</h3>
+                        <div class="m3-chip-group" id="use-cases"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section-container">
-            <div class="section-tag">// 03. CAREER_PATH</div>
-            <h2 class="section-title">Experience</h2>
+        <!-- Wavy Divider (Secondary Accent) -->
+        <svg class="wavy-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M0 14 Q 40 26, 80 14 T 160 14 T 240 14 T 320 14 T 400 14 T 480 14 T 560 14 T 640 14 T 720 14 T 800 14 T 880 14 T 960 14 T 1040 14 T 1120 14 T 1200 14" stroke="var(--md-sys-color-secondary)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="card-header-flex">
-                            <div>
-                                <h3 class="role-title">Tutor <span class="badge-current">CURRENT</span></h3>
-                                <p class="company-name">Self-Employed &mdash; Nairobi, KE</p>
-                            </div>
-                            <span class="date-text">Aug 2023 &mdash; Present</span>
+        <!-- Section: Experience & Education (Asymmetric Split) -->
+        <section id="experience" class="section-container" aria-labelledby="journey-title">
+            <div class="section-header" data-reveal>
+                <div class="section-kicker">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                    </svg>
+                    <span>Background</span>
+                </div>
+                <h2 id="journey-title" class="section-title">Experience &amp; Education</h2>
+                <p class="section-subtitle">Hands-on technical mentorship paired with formal software engineering training.</p>
+            </div>
+
+            <div class="journey-split">
+                <article class="experience-card" data-reveal style="--reveal-delay: 0ms;">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="role-title">Technical Tutor <span class="badge-current">Current</span></h3>
+                            <p class="company-name">Self-Employed &mdash; Nairobi, KE</p>
                         </div>
-                        <p class="role-desc">Helping friends and neighbors in learning coding and preparing students for exams and presentations. Utilizing clear communication and collaborative teamwork to structure technical study sessions.</p>
-                        <div class="tech-tags">
-                            <span>Mentorship</span>
-                            <span>Communication</span>
-                            <span>Collaboration</span>
-                            <span>Teamwork</span>
-                            <span>Time Management</span>
+                        <span class="date-text">Aug 2023 &mdash; Present</span>
+                    </div>
+                    <p class="role-desc">
+                        Helping students and peers learn programming fundamentals and prepare for technical exams and project presentations. Structuring study sessions around clear problem decomposition and collaborative code reviews.
+                    </p>
+                    <div class="m3-chip-group">
+                        <span class="m3-chip">Mentorship</span>
+                        <span class="m3-chip">Code Review</span>
+                        <span class="m3-chip">Communication</span>
+                        <span class="m3-chip">Collaboration</span>
+                    </div>
+                </article>
+
+                <div id="education" class="education-stack" aria-label="Academic Credentials">
+                    <article class="edu-card edu-card--highlight" data-reveal style="--reveal-delay: 40ms;">
+                        <div class="edu-header">
+                            <h3 class="edu-school">USIU-Africa</h3>
+                            <span class="edu-date">2025 &mdash; Present</span>
                         </div>
-                    </div>
+                        <p class="edu-degree">B.S. Software Engineering</p>
+                        <p class="edu-coursework">
+                            Undergraduate degree focused on engineering logic, systems analysis, architectural data patterns, and collaborative web frameworks.
+                        </p>
+                    </article>
+
+                    <article class="edu-card" data-reveal style="--reveal-delay: 75ms;">
+                        <div class="edu-header">
+                            <h3 class="edu-school">Institute of Software Technologies</h3>
+                            <span class="edu-date">Nov 2024</span>
+                        </div>
+                        <p class="edu-degree">Diploma in Software Development</p>
+                        <p class="edu-coursework">
+                            <strong>Coursework:</strong> Mobile development, PHP and Laravel, Node.js, React JS, API Design, and Databases.
+                        </p>
+                    </article>
+
+                    <article class="edu-card" data-reveal style="--reveal-delay: 105ms;">
+                        <div class="edu-header">
+                            <h3 class="edu-school">eMobilis</h3>
+                            <span class="edu-date">Sep 2023</span>
+                        </div>
+                        <p class="edu-degree">Certificate in Software Development</p>
+                        <p class="edu-coursework">
+                            <strong>Coursework:</strong> Python, HTML and CSS, and Mobile Development.
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="section-container">
-            <div class="section-tag">// 04. ACADEMICS</div>
-            <h2 class="section-title">Education &amp; Growth</h2>
-
-            <div class="responsive-grid">
-                <div class="code-card" style="padding: 2.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">USIU-Africa</h3>
-                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">2025 &mdash; PRESENT</span>
-                    </div>
-                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">B.S. Software Engineering</p>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                        Current undergraduate degree mapping advanced engineering logic, core systems analysis, architectural data patterns, and collaborative web frameworks.
-                    </p>
-                </div>
-
-                <div class="code-card" style="padding: 2.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">Institute of Software Technologies</h3>
-                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">NOV 2024</span>
-                    </div>
-                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">Diploma in Software Development</p>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                        <strong>Relevant Coursework:</strong> Mobile development, PHP and Laravel, Node.js, React JS, API Design and Database for Devs.
-                    </p>
-                </div>
-
-                <div class="code-card" style="padding: 2.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="color: var(--text-primary); font-size: 1.2rem;">Emobilis</h3>
-                        <span style="color: var(--accent-sage); font-family: var(--font-mono); font-size: 0.85rem;">SEP 2023</span>
-                    </div>
-                    <p style="color: var(--accent-blue); margin-bottom: 1.5rem;">Certificate in Software Development</p>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                        <strong>Relevant Coursework:</strong> Python, HTML and CSS and Mobile Development.
-                    </p>
-                </div>
-            </div>
-        </section>
-
+        <!-- Section: Contact Hub -->
         <section id="contact" class="section-container" aria-labelledby="contact-title">
-            <div class="section-tag" aria-hidden="true">// 05. DIRECT_COMMUNICATION</div>
-            <h2 id="contact-title" class="section-title">Let's Build Something Exceptional</h2>
-            <p class="section-subtitle">Whether you have a software engineering opening, an architecture challenge, or a contract project, my inbox is open.</p>
-            
+            <div class="section-header" data-reveal>
+                <div class="section-kicker">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    <span>Direct Communication</span>
+                </div>
+                <h2 id="contact-title" class="section-title">Let's Build Something Exceptional</h2>
+                <p class="section-subtitle">Whether you have a software engineering role, an architecture challenge, or a contract project, my inbox is open.</p>
+            </div>
+
             <div class="contact-grid">
-                <!-- Direct Communication Card -->
-                <div class="code-card contact-card">
+                <div class="contact-card" data-reveal style="--reveal-delay: 0ms;">
                     <h3 class="contact-card-title">Direct Channels</h3>
-                    <p class="contact-card-sub">Feel free to reach out directly through any of these communication platforms:</p>
-                    
+                    <p class="contact-card-sub">Reach out directly through any of these platforms:</p>
+
                     <ul class="contact-methods-list">
                         <li class="contact-method-item">
-                            <div class="contact-method-icon">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div class="contact-method-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
                             </div>
                             <div class="contact-method-info">
                                 <span class="contact-method-label">Direct Email</span>
                                 <a href="mailto:raynaldgitau@gmail.com" class="contact-method-value">raynaldgitau@gmail.com</a>
                             </div>
                             <button type="button" class="btn-copy-email" id="btn-copy-email" aria-label="Copy email address to clipboard">
-                                <i class="fas fa-copy" aria-hidden="true"></i>
-                                <span class="copy-tooltip" id="copy-tooltip">Copy</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                <span class="copy-tooltip" id="copy-tooltip" role="status">Copy</span>
                             </button>
                         </li>
 
                         <li class="contact-method-item">
-                            <div class="contact-method-icon">
-                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <div class="contact-method-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                </svg>
                             </div>
                             <div class="contact-method-info">
                                 <span class="contact-method-label">LinkedIn</span>
@@ -419,8 +503,10 @@
                         </li>
 
                         <li class="contact-method-item">
-                            <div class="contact-method-icon">
-                                <i class="fab fa-github" aria-hidden="true"></i>
+                            <div class="contact-method-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                                </svg>
                             </div>
                             <div class="contact-method-info">
                                 <span class="contact-method-label">GitHub</span>
@@ -432,8 +518,10 @@
                         </li>
 
                         <li class="contact-method-item">
-                            <div class="contact-method-icon">
-                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <div class="contact-method-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                </svg>
                             </div>
                             <div class="contact-method-info">
                                 <span class="contact-method-label">Base Location &amp; Timezone</span>
@@ -443,29 +531,31 @@
                     </ul>
                 </div>
 
-                <!-- Fast Action & Availability Card -->
-                <div class="code-card contact-card contact-card-cta">
-                    <div class="availability-status-box">
-                        <span class="status-indicator" aria-hidden="true"></span>
-                        <div>
-                            <span class="availability-headline">Available for Opportunities</span>
-                            <span class="availability-sub">Full-Time Software Roles &amp; Technical Contracts</span>
+                <div class="contact-card contact-card--cta" data-reveal style="--reveal-delay: 50ms;">
+                    <div>
+                        <div class="availability-status-box">
+                            <svg class="status-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/>
+                            </svg>
+                            <div>
+                                <span class="availability-headline">Available for Opportunities</span>
+                                <span class="availability-sub">Full-Time Software Roles &amp; Technical Contracts</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="response-guarantee">
-                        <i class="fas fa-clock-rotate-left" aria-hidden="true"></i>
-                        <span>Guaranteed prompt response within <strong>24 hours</strong>.</span>
+                        <div class="response-guarantee">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>Response time within <strong>24 hours</strong>.</span>
+                        </div>
                     </div>
 
                     <div class="contact-action-box">
                         <a href="mailto:raynaldgitau@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Raynald%20Gitau" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             <span>Send an Email</span>
                         </a>
-                        
                         <a href="assets/refreshed%20cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
                             <span>Download Resume (PDF)</span>
                             <span class="visually-hidden">(opens in new window)</span>
                         </a>
@@ -478,9 +568,17 @@
     <footer class="footer">
         <div class="footer-container">
             <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
-            <div class="social-links footer-socials">
-                <a href="https://github.com/rayynaldgitau" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/raynaldgitau" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="social-touch-group">
+                <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="GitHub (opens in new window)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="LinkedIn (opens in new window)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
