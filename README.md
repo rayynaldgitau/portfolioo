@@ -1,28 +1,24 @@
 # Raynald Gitau — Software Engineering Portfolio
 
-A high-performance personal portfolio engineered with vanilla HTML5, CSS3, and modern JavaScript (no frameworks or heavy runtime dependencies). Built to WCAG 2.2 AA accessibility standards and optimized for both quick recruiter evaluation (30–60 second skim) and client technical validation.
+Personal portfolio built with plain HTML5, CSS3, and vanilla JavaScript (zero frameworks or runtime dependencies), styled with a Material 3 Expressive design system.
 
-## Core Features
-- **HCI-Grounded Layout**: F/Z visual scanning hierarchy, Fitts's Law-optimized CTAs, and Hick's Law navigation.
-- **Accessible Glassmorphism**: Calibrated dark slate surfaces with verified 4.5:1+ text contrast ratios and WCAG AA compliance.
-- **Proof of Engineering**: Project case studies detailing real-world problems, architecture roles, tech stacks, and measurable outcomes.
-- **Ergonomics & Motion**: Full support for `prefers-reduced-motion` and keyboard focus outlines via `:focus-visible`.
+## Core Architecture
+- **Material 3 Expressive Tokens**: Single seed (`#6C3CE9`) tonal palette (`--md-sys-color-*`), shape scale (`--md-sys-shape-corner-*`), and Light/Dark scheme toggle persisted in `localStorage`.
+- **Expressive Shape & Motion**: Cookie-masked portrait, organic SVG blobs, wavy dividers, varied-shape M3 chips, press/hover shape morphing, GPU-only scroll parallax, and full `prefers-reduced-motion` support.
+- **Typography & Speed**: `Bricolage Grotesque` display + `Plus Jakarta Sans` body + `JetBrains Mono` code via Google Fonts `preconnect` + `display=swap`, inline SVGs (no icon-font CDN), and `48px` minimum touch targets.
 
 ## Key Files
-- [`index.html`](index.html): Main portfolio page containing semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`).
-- [`styles.css`](styles.css): CSS variables design tokens (8pt spacing, fluid typography scale, accessible color contrast, glassmorphism).
-- [`script.js`](script.js): Accessible mobile navigation with ARIA sync, scroll observers, and interactive widgets.
-- `project-*.html`: In-depth engineering case studies.
-- `assets/`: Optimized profile photography and downloadable PDF resume.
+- `index.html`: Main portfolio (Hero, Bento Projects, Skills Explorer, Experience/Education, Contact Hub).
+- `styles.css`: Complete M3 Expressive token system, Light/Dark schemes, tonal surfaces, and responsive breakpoints.
+- `script.js`: Theme toggle, accessible nav drawer, `IntersectionObserver` scroll reveals, decorative parallax, skill switcher, and clipboard copy.
+- `project-*.html` & `hire-me.html`: Case study deep-dives and project intake form.
+- `assets/`: Profile image (`profilePic.jpeg`), favicons, and resume PDF.
 
 ## How to Run
-No build steps or package managers required. Open `index.html` directly in any modern browser, or serve locally with any static HTTP server:
+Open `index.html` directly or serve locally:
 
 ```bash
-# Python 3
 python -m http.server 8000
-
-# or Node.js npx
-npx serve .
 ```
-Navigate to `http://localhost:8000`.
+
+Visit `http://localhost:8000`.
