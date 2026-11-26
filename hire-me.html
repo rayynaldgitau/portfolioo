@@ -3,307 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hire Raynald Gitau | Junior Software Developer</title>
-    
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <title>Hire Raynald Gitau — Full-Stack Software Developer</title>
 
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+    <script>
+        (function () {
+            var saved = localStorage.getItem('m3-scheme');
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.scheme = dark ? 'dark' : 'light';
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <!-- Specific style definitions to shrink containers into compact cards -->
     <style>
-        .hire-page-title {
-            font-size: clamp(2rem, 4vw, 2.8rem); 
-            font-weight: 600; 
-            line-height: 1.2; 
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle-center {
-            color: var(--text-secondary); 
-            font-size: 1rem;
-            line-height: 1.6;
-            max-width: 580px;
-            margin: 0 auto;
-        }
-
-        /* Constrain the grid size so cards stay compact on wide monitors */
-        .compact-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            max-width: 950px;
-            margin: 0 auto 4rem auto;
-        }
-
-        .service-panel {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-        }
-
-        /* Fix positioning inside the code headers */
-        .card-header-aligned {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Vertically centers headers and tags perfectly */
-            padding: 0.6rem 1rem;
-            background: rgba(15, 23, 42, 0.5);
-            border-bottom: 1px solid var(--border-light);
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-        }
-
-        .card-header-aligned span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Tighten internal card spacing */
-        .service-body-compact {
-            padding: 1.5rem; 
-            display: flex; 
-            flex-direction: column; 
-            flex-grow: 1;
-        }
-
-        .panel-heading-compact {
-            color: var(--text-primary); 
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
-        .service-desc-compact {
-            color: var(--text-secondary); 
-            font-size: 0.85rem; 
-            line-height: 1.6; 
-            margin-bottom: 1.5rem; 
-            flex-grow: 1;
-        }
-
-        .form-section-title {
-            color: var(--text-primary); 
-            font-size: 1.4rem; 
-            font-weight: 600; 
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group {
-            display: flex; 
-            flex-direction: column; 
-            gap: 0.4rem;
-        }
-
-        .form-label {
-            font-family: var(--font-mono); 
-            font-size: 0.7rem; 
-            color: var(--accent-sage);
-            letter-spacing: 0.05em;
-        }
+        .hire-header-center { text-align: center; max-width: 720px; margin: 0 auto var(--md-sys-space-12); }
+        .hire-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--md-sys-space-6); margin-bottom: var(--md-sys-space-12); }
+        .service-card { background-color: var(--md-sys-color-surface-container); border-radius: var(--md-sys-shape-corner-extra-large); padding: var(--md-sys-space-6); display: flex; flex-direction: column; gap: var(--md-sys-space-4); transition: transform var(--duration-hover) var(--ease-out), background-color var(--duration-hover) var(--ease-out); }
+        .service-card.is-selected { background-color: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+        .service-card-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem; font-weight: 700; }
+        .service-card-title { font-size: 1.375rem; font-weight: 800; }
+        .service-card-desc { font-size: var(--md-sys-typescale-body-medium-size); opacity: 0.9; flex-grow: 1; }
+        .hire-form-card { background-color: var(--md-sys-color-surface-container-high); border-radius: var(--md-sys-shape-corner-extra-large); padding: var(--md-sys-space-8); max-width: 720px; margin: 0 auto; }
+        .hire-form { display: flex; flex-direction: column; gap: var(--md-sys-space-4); margin-top: var(--md-sys-space-6); }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-label { font-size: 0.875rem; font-weight: 700; color: var(--md-sys-color-on-surface); }
+        .m3-input { width: 100%; min-height: var(--md-sys-touch-target); padding: 0.75rem 1rem; border-radius: var(--md-sys-shape-corner-small); border: 1px solid var(--md-sys-color-outline); background-color: var(--md-sys-color-surface-container-lowest); color: var(--md-sys-color-on-surface); font-family: inherit; font-size: 1rem; }
+        .m3-textarea { min-height: 120px; resize: vertical; }
     </style>
 </head>
 <body>
-    <!-- Accessibility Skip Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="bg-ambient" aria-hidden="true"></div>
-
-    <!-- Navigation Header -->
-    <header class="glass-header">
+    <header class="m3-app-bar">
         <nav class="nav-container" aria-label="Hire Page Navigation">
-            <a href="index.html" class="logo-link" aria-label="Raynald Gitau - Home">
-                <span class="logo-symbol">R</span><span class="logo-dot">.</span><span class="logo-name">Gitau</span>
+            <a href="index.html" class="logo-link" aria-label="Raynald Gitau — Home">
+                <span>R</span><span class="logo-dot" aria-hidden="true"></span><span>Gitau</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-item"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Portfolio</a></li>
-            </ul>
+
+            <div class="nav-actions-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Back to Portfolio</a></li>
+                </ul>
+
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-pressed="false" aria-label="Switch to dark theme">
+                    <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+                        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main id="main-content" class="section-container" style="padding-top: 130px; min-height: 90vh;">
-        
-        <!-- Hero Summary Block -->
-        <div class="hero-text fade-in" style="text-align: center; max-width: 750px; margin: 0 auto 3rem auto;">
-            <div class="status-badge" style="margin-bottom: 1.2rem;">
-                <span class="pulse-dot"></span> Open for Freelance, Contracts & Mentorship
+    <main id="main-content" class="section-container">
+        <div class="hire-header-center">
+            <div class="status-pill" style="margin-bottom: 1rem;">
+                <svg class="status-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/>
+                </svg>
+                <span>Open for Freelance, Contracts &amp; Mentorship</span>
             </div>
-            <h1 class="hire-page-title">Let's Build Something Exceptional</h1>
-            <p class="section-subtitle-center">
-                As a Software Engineering student at USIU-Africa with a proven background in full-stack engineering, I collaborate with teams and clients to deliver clean, maintainable logic.
+            <h1 class="case-study-title">Let's Build Something Exceptional</h1>
+            <p class="case-study-lead" style="margin: 0 auto;">
+                As a Software Engineering student at USIU-Africa with full-stack experience, I collaborate with teams and clients to ship clean, maintainable systems.
             </p>
         </div>
 
-        <!-- Compact Dynamic Cards Grid -->
-        <div class="compact-cards-grid fade-in">
-            
-            <!-- Card 1: Development -->
-            <div class="code-card service-panel" id="panel-web" data-service="Web Application Development">
-                <div class="card-header-aligned">
-                    <span style="color: var(--accent-blue);"><i class="fas fa-laptop-code"></i> DEVELOPMENT</span>
-                    <span style="color: var(--accent-sage);">Full-Stack</span>
+        <div class="hire-cards-grid">
+            <article class="service-card" data-service="Web Application Development">
+                <div class="service-card-top">
+                    <span>Development</span>
+                    <span>Full-Stack</span>
                 </div>
-                <div class="service-body-compact">
-                    <h3 class="panel-heading-compact">Web Application Design</h3>
-                    <p class="service-desc-compact">
-                        Building responsive, dynamic interface viewports using React JS[cite: 1], integrated with structured Node.js[cite: 1] or modern PHP/Laravel[cite: 1] backends.
-                    </p>
-                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
-                </div>
-            </div>
+                <h2 class="service-card-title">Web Application Design</h2>
+                <p class="service-card-desc">
+                    Building responsive, accessible interfaces using React JS, integrated with structured Node.js or PHP/Laravel backends.
+                </p>
+                <button type="button" class="btn btn-secondary select-service-btn">Select Service</button>
+            </article>
 
-            <!-- Card 2: Data Paths -->
-            <div class="code-card service-panel" id="panel-api" data-service="API Design & Infrastructure">
-                <div class="card-header-aligned">
-                    <span style="color: var(--accent-blue);"><i class="fas fa-database"></i> DATA PATHS</span>
-                    <span style="color: var(--accent-blue);">API Design</span>
+            <article class="service-card" data-service="API Design & Infrastructure">
+                <div class="service-card-top">
+                    <span>Architecture</span>
+                    <span>Backend &amp; DB</span>
                 </div>
-                <div class="service-body-compact">
-                    <h3 class="panel-heading-compact">API & Database Design</h3>
-                    <p class="service-desc-compact">
-                        Structuring normalized schema designs and backend developer APIs[cite: 1]. System endpoints are completely validated utilizing Postman[cite: 1] configurations.
-                    </p>
-                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
-                </div>
-            </div>
+                <h2 class="service-card-title">API Design &amp; Databases</h2>
+                <p class="service-card-desc">
+                    Designing normalized MySQL schemas, atomic transactions, and predictable RESTful API endpoints with validation.
+                </p>
+                <button type="button" class="btn btn-secondary select-service-btn">Select Service</button>
+            </article>
 
-            <!-- Card 3: Mentorship -->
-            <div class="code-card service-panel" id="panel-tutor" data-service="Technical Tutoring & Mentorship">
-                <div class="card-header-aligned">
-                    <span style="color: var(--accent-blue);"><i class="fas fa-chalkboard-teacher"></i> MENTORSHIP</span>
-                    <span style="color: #a78bfa;">1-on-1 Sessions</span>
+            <article class="service-card" data-service="Technical Tutoring & Mentorship">
+                <div class="service-card-top">
+                    <span>Mentorship</span>
+                    <span>1-on-1 Sessions</span>
                 </div>
-                <div class="service-body-compact">
-                    <h3 class="panel-heading-compact">Programming Tutor</h3>
-                    <p class="service-desc-compact">
-                        Providing technical coaching models[cite: 1]. Helping friends and neighbors understand code logic[cite: 1], manage database logic, and prepare for presentation workflows[cite: 1].
-                    </p>
-                    <button class="btn secondary-btn select-service-btn" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem 1rem;">Select Service</button>
-                </div>
-            </div>
+                <h2 class="service-card-title">Technical Tutoring</h2>
+                <p class="service-card-desc">
+                    Structured coding study sessions, project architecture reviews, and exam/presentation prep for software students.
+                </p>
+                <button type="button" class="btn btn-secondary select-service-btn">Select Service</button>
+            </article>
         </div>
 
-        <!-- Dynamic Intake Form Section -->
-        <div class="fade-in" style="max-width: 650px; margin: 0 auto;">
-            <div class="code-card" style="padding: 2rem; border-color: var(--border-light);">
-                <div style="margin-bottom: 1.5rem; text-align: center;">
-                    <h2 class="form-section-title">Intake Request</h2>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Select an offering above or describe your project scope manually below.</p>
+        <section class="hire-form-card" id="hire-form" aria-labelledby="intake-title">
+            <h2 id="intake-title" class="contact-card-title">Project Brief</h2>
+            <p class="contact-card-sub" style="margin-bottom: 0;">Select a track above or fill in your details to launch a pre-formatted email.</p>
+
+            <form class="hire-form" id="project-intake-form">
+                <div class="form-group">
+                    <label for="client-name" class="form-label">Your Name</label>
+                    <input type="text" id="client-name" class="m3-input" placeholder="Jane Doe" required>
                 </div>
 
-                <form id="hire-form" onsubmit="event.preventDefault(); handleFormSubmit();" style="display: flex; flex-direction: column; gap: 1rem;">
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; flex-wrap: wrap;">
-                        <div class="form-group">
-                            <label class="form-label">NAME</label>
-                            <input type="text" id="client-name" placeholder="Alex Chen" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; transition: border-color 0.2s;">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">EMAIL</label>
-                            <input type="email" id="client-email" placeholder="alex@example.com" required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; transition: border-color 0.2s;">
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="selected-service-field" class="form-label">Selected Track</label>
+                    <input type="text" id="selected-service-field" class="m3-input" value="General Inquiry" readonly>
+                </div>
 
-                    <div class="form-group">
-                        <label class="form-label" style="color: var(--accent-blue);">SELECTED TRACK</label>
-                        <input type="text" id="selected-service-field" readonly value="General Inquiry" style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: rgba(15, 23, 42, 0.6); color: var(--accent-blue); outline: none; font-size: 0.85rem; font-family: var(--font-mono); border-left: 3px solid var(--accent-blue);">
-                    </div>
+                <div class="form-group">
+                    <label for="project-scope" class="form-label">Project Scope &amp; Goals</label>
+                    <textarea id="project-scope" class="m3-input m3-textarea" placeholder="Describe your goals, stack, and timeline..." required></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label class="form-label">PROJECT REQUIREMENTS OR SCOPE</label>
-                        <textarea id="project-scope" rows="4" placeholder="Outline what you are building or looking to learn..." required style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.9rem; line-height: 1.5; resize: vertical; transition: border-color 0.2s;"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn primary-btn" style="justify-content: center; width: 100%; padding: 0.8rem; font-size: 0.95rem; margin-top: 0.5rem;">
-                        <i class="fas fa-paper-plane"></i> Initialize Integration
-                    </button>
-                </form>
-            </div>
-        </div>
+                <button type="submit" class="btn btn-primary btn-block">Compose Email</button>
+            </form>
+        </section>
     </main>
 
-    <footer class="footer" style="margin-top: 4rem;">
+    <footer class="footer">
         <div class="footer-container">
             <p>&copy; 2026 Raynald Gitau. All rights reserved.</p>
-            <div class="social-links footer-socials">
-                <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new window)">
-                    <i class="fab fa-github" aria-hidden="true"></i>
+            <div class="social-touch-group">
+                <a href="https://github.com/rayynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="GitHub Profile (opens in new window)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 </a>
-                <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new window)">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:raynaldgitau@gmail.com" aria-label="Email Raynald Gitau">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="https://linkedin.com/in/raynaldgitau" target="_blank" rel="noopener noreferrer" class="social-touch-btn" aria-label="LinkedIn Profile (opens in new window)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- Script behaviors -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const panels = document.querySelectorAll('.service-panel');
+            const cards = document.querySelectorAll('.service-card');
             const serviceField = document.getElementById('selected-service-field');
-            const scopeTextArea = document.getElementById('project-scope');
+            const scopeArea = document.getElementById('project-scope');
+            const form = document.getElementById('project-intake-form');
 
             const templates = {
-                "Web Application Development": "Hi Raynald,\n\nI'm looking to build a custom web application. Here is a brief description of the functional goals, timeline, and front-end/back-end requirements:\n\n- Project Target:\n- Desired Stack Components (React/Node/Laravel):\n- Estimated Timeline:",
-                "API Design & Infrastructure": "Hi Raynald,\n\nI have an infrastructure requirement involving database architecture and secure API optimization rulesets. Here is a quick overview of what we need:\n\n- Current Database Environment:\n- Integration/Endpoint Parameters:\n- Postman Validation Requirements:",
-                "Technical Tutoring & Mentorship": "Hi Raynald,\n\nI'm looking to book engineering tutoring or study mentorship blocks. Here are the development core modules or tasks I want to prioritize:\n\n- Specific Concepts/Languages:\n- Assignment or Presentation Context:\n- Schedule Preference:"
+                'Web Application Development': "Hi Raynald,\n\nI'm looking to build a custom web application.\n\n- Project Goal:\n- Desired Stack (React/Node/Laravel):\n- Estimated Timeline:",
+                'API Design & Infrastructure': "Hi Raynald,\n\nI have a backend/API architecture requirement.\n\n- Current Database:\n- Endpoint Requirements:\n- Timeline:",
+                'Technical Tutoring & Mentorship': "Hi Raynald,\n\nI'm looking to book 1-on-1 engineering tutoring.\n\n- Topics/Languages:\n- Goals:\n- Preferred Schedule:"
             };
 
-            panels.forEach(panel => {
-                const selectBtn = panel.querySelector('.select-service-btn');
-                
-                selectBtn.addEventListener('click', () => {
-                    panels.forEach(p => {
-                        p.style.borderColor = 'var(--border-light)';
-                        const btn = p.querySelector('.select-service-btn');
-                        btn.textContent = 'Select Service';
-                        btn.classList.add('secondary-btn');
-                        btn.classList.remove('primary-btn');
+            cards.forEach(card => {
+                const btn = card.querySelector('.select-service-btn');
+                if (!btn) return;
+                btn.addEventListener('click', () => {
+                    cards.forEach(c => {
+                        c.classList.remove('is-selected');
+                        const b = c.querySelector('.select-service-btn');
+                        if (b) {
+                            b.textContent = 'Select Service';
+                            b.classList.add('btn-secondary');
+                            b.classList.remove('btn-primary');
+                        }
                     });
+                    card.classList.add('is-selected');
+                    btn.textContent = 'Selected Track';
+                    btn.classList.remove('btn-secondary');
+                    btn.classList.add('btn-primary');
 
-                    panel.style.borderColor = 'var(--accent-blue)';
-                    selectBtn.textContent = 'Selected Track';
-                    selectBtn.classList.remove('secondary-btn');
-                    selectBtn.classList.add('primary-btn');
-
-                    const trackName = panel.getAttribute('data-service');
-                    serviceField.value = trackName;
-                    scopeTextArea.value = templates[trackName] || '';
-                    scopeTextArea.focus();
-                    
-                    document.getElementById('hire-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const track = card.getAttribute('data-service') || 'General Inquiry';
+                    serviceField.value = track;
+                    scopeArea.value = templates[track] || '';
+                    scopeArea.focus();
                 });
             });
 
-            const fields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
-            fields.forEach(field => {
-                field.addEventListener('focus', () => field.style.borderColor = 'var(--accent-sage)');
-                field.addEventListener('blur', () => field.style.borderColor = 'var(--border-light)');
-            });
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('client-name').value;
+                    const track = serviceField.value;
+                    const body = encodeURIComponent(scopeArea.value);
+                    window.location.href = `mailto:raynaldgitau@gmail.com?subject=${encodeURIComponent('Project Intake: ' + track + ' - ' + name)}&body=${body}`;
+                });
+            }
         });
-
-        function handleFormSubmit() {
-            const name = document.getElementById('client-name').value;
-            const track = document.getElementById('selected-service-field').value;
-            const body = encodeURIComponent(document.getElementById('project-scope').value);
-            
-            const mailtoUrl = `mailto:raynaldgitau@gmail.com?subject=${encodeURIComponent('Project Intake: ' + track + ' - ' + name)}&body=${body}`;
-            window.location.href = mailtoUrl;
-        }
     </script>
     <script src="script.js"></script>
 </body>
